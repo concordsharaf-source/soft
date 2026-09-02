@@ -1,0 +1,460 @@
+.class public Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Linfo/aalmoghalis/inventorz/activity/Bill_edit;->update_bill_total(Landroid/view/View;)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+
+# instance fields
+.field public final synthetic a:Landroid/widget/EditText;
+
+.field public final synthetic b:Landroid/widget/RadioButton;
+
+.field public final synthetic c:Landroid/app/AlertDialog;
+
+.field public final synthetic d:Landroid/view/View;
+
+.field public final synthetic e:Linfo/aalmoghalis/inventorz/activity/Bill_edit;
+
+
+# direct methods
+.method public constructor <init>(Linfo/aalmoghalis/inventorz/activity/Bill_edit;Landroid/widget/EditText;Landroid/widget/RadioButton;Landroid/app/AlertDialog;Landroid/view/View;)V
+    .locals 0
+
+    iput-object p1, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->e:Linfo/aalmoghalis/inventorz/activity/Bill_edit;
+
+    iput-object p2, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->a:Landroid/widget/EditText;
+
+    iput-object p3, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->b:Landroid/widget/RadioButton;
+
+    iput-object p4, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->c:Landroid/app/AlertDialog;
+
+    iput-object p5, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->d:Landroid/view/View;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onClick(Landroid/view/View;)V
+    .locals 14
+
+    iget-object p1, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->a:Landroid/widget/EditText;
+
+    invoke-static {p1}, LyX;->a(Landroid/widget/EditText;)Z
+
+    move-result p1
+
+    iget-object v0, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->b:Landroid/widget/RadioButton;
+
+    invoke-virtual {v0}, Landroid/widget/CompoundButton;->isChecked()Z
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    const-wide/high16 v2, 0x4059000000000000L    # 100.0
+
+    const-string v4, ","
+
+    const-string v5, ""
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->a:Landroid/widget/EditText;
+
+    invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    if-lez v0, :cond_1
+
+    iget-object v0, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->a:Landroid/widget/EditText;
+
+    invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v4, v5}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
+
+    move-result-wide v6
+
+    cmpl-double v0, v6, v2
+
+    if-gtz v0, :cond_0
+
+    const-wide/16 v8, 0x0
+
+    cmpg-double v0, v6, v8
+
+    if-gez v0, :cond_1
+
+    :cond_0
+    iget-object p1, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->a:Landroid/widget/EditText;
+
+    const-string v0, "% value"
+
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setError(Ljava/lang/CharSequence;)V
+
+    const/4 p1, 0x0
+
+    :cond_1
+    if-eqz p1, :cond_4
+
+    iget-object p1, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->a:Landroid/widget/EditText;
+
+    invoke-virtual {p1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v4, v5}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
+
+    move-result-wide v6
+
+    iget-object p1, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->b:Landroid/widget/RadioButton;
+
+    invoke-virtual {p1}, Landroid/widget/CompoundButton;->isChecked()Z
+
+    move-result p1
+
+    const/4 v0, 0x1
+
+    if-eqz p1, :cond_2
+
+    iget-object p1, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->e:Linfo/aalmoghalis/inventorz/activity/Bill_edit;
+
+    iput v0, p1, Linfo/aalmoghalis/inventorz/activity/Bill_edit;->T1:I
+
+    goto :goto_0
+
+    :cond_2
+    iget-object p1, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->e:Linfo/aalmoghalis/inventorz/activity/Bill_edit;
+
+    iput v1, p1, Linfo/aalmoghalis/inventorz/activity/Bill_edit;->T1:I
+
+    :goto_0
+    iget-object p1, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->e:Linfo/aalmoghalis/inventorz/activity/Bill_edit;
+
+    iget-object p1, p1, Linfo/aalmoghalis/inventorz/activity/Bill_edit;->Z:Landroid/widget/TextView;
+
+    invoke-virtual {p1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v4, v5}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
+
+    move-result-wide v8
+
+    iget-object p1, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->e:Linfo/aalmoghalis/inventorz/activity/Bill_edit;
+
+    iget-object p1, p1, Linfo/aalmoghalis/inventorz/activity/Bill_edit;->b0:Landroid/widget/TextView;
+
+    invoke-virtual {p1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v4, v5}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
+
+    move-result-wide v10
+
+    add-double/2addr v8, v10
+
+    iget-object p1, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->e:Linfo/aalmoghalis/inventorz/activity/Bill_edit;
+
+    iget v1, p1, Linfo/aalmoghalis/inventorz/activity/Bill_edit;->T1:I
+
+    if-ne v1, v0, :cond_3
+
+    div-double v0, v6, v2
+
+    mul-double v0, v0, v8
+
+    goto :goto_1
+
+    :cond_3
+    move-wide v0, v6
+
+    :goto_1
+    sub-double/2addr v8, v0
+
+    invoke-static {p1}, Linfo/aalmoghalis/inventorz/activity/Bill_edit;->N(Linfo/aalmoghalis/inventorz/activity/Bill_edit;)Landroid/widget/TextView;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v4, v5}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
+
+    move-result-wide v10
+
+    iget-object p1, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->e:Linfo/aalmoghalis/inventorz/activity/Bill_edit;
+
+    invoke-static {p1}, Linfo/aalmoghalis/inventorz/activity/Bill_edit;->O(Linfo/aalmoghalis/inventorz/activity/Bill_edit;)Landroid/widget/TextView;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v4, v5}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
+
+    move-result-wide v12
+
+    mul-double v12, v12, v8
+
+    div-double/2addr v12, v2
+
+    add-double/2addr v8, v12
+
+    add-double/2addr v8, v10
+
+    iget-object p1, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->e:Linfo/aalmoghalis/inventorz/activity/Bill_edit;
+
+    iget-object p1, p1, Linfo/aalmoghalis/inventorz/activity/Bill_edit;->i:LZ00;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "update bills set amount=\'"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v8, v9}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v3, "\',d_amount= \'"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0, v1}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v3, "\',tax_amount= \'"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v12, v13}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v3, "\',t_val=\'"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v3, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->e:Linfo/aalmoghalis/inventorz/activity/Bill_edit;
+
+    invoke-static {v3}, Linfo/aalmoghalis/inventorz/activity/Bill_edit;->O(Linfo/aalmoghalis/inventorz/activity/Bill_edit;)Landroid/widget/TextView;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v4, v5}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v3, "\',d_val= \'"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v6, v7}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v3, "\',discount_id= \'"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v3, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->e:Linfo/aalmoghalis/inventorz/activity/Bill_edit;
+
+    iget v3, v3, Linfo/aalmoghalis/inventorz/activity/Bill_edit;->T1:I
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v3, "\' where id=\'"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v3, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->e:Linfo/aalmoghalis/inventorz/activity/Bill_edit;
+
+    invoke-static {v3}, Linfo/aalmoghalis/inventorz/activity/Bill_edit;->D(Linfo/aalmoghalis/inventorz/activity/Bill_edit;)J
+
+    move-result-wide v3
+
+    invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v3, "\' and date_=\'"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v3, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->e:Linfo/aalmoghalis/inventorz/activity/Bill_edit;
+
+    invoke-static {v3}, Linfo/aalmoghalis/inventorz/activity/Bill_edit;->P(Linfo/aalmoghalis/inventorz/activity/Bill_edit;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v3, "\'"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p1, v2}, LZ00;->v0(Ljava/lang/String;)V
+
+    iget-object p1, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->e:Linfo/aalmoghalis/inventorz/activity/Bill_edit;
+
+    iget-object p1, p1, Linfo/aalmoghalis/inventorz/activity/Bill_edit;->Z:Landroid/widget/TextView;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    sub-double v3, v8, v10
+
+    invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object p1, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->e:Linfo/aalmoghalis/inventorz/activity/Bill_edit;
+
+    iget-object p1, p1, Linfo/aalmoghalis/inventorz/activity/Bill_edit;->b0:Landroid/widget/TextView;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v2, v0, v1}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object p1, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->e:Linfo/aalmoghalis/inventorz/activity/Bill_edit;
+
+    invoke-virtual {p1}, Linfo/aalmoghalis/inventorz/activity/Bill_edit;->V1()V
+
+    iget-object p1, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->e:Linfo/aalmoghalis/inventorz/activity/Bill_edit;
+
+    iput-wide v8, p1, Linfo/aalmoghalis/inventorz/activity/Bill_edit;->R1:D
+
+    invoke-virtual {p1}, Linfo/aalmoghalis/inventorz/activity/Bill_edit;->Z0()V
+
+    iget-object p1, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->c:Landroid/app/AlertDialog;
+
+    invoke-virtual {p1}, Landroid/app/Dialog;->dismiss()V
+
+    iget-object p1, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->e:Linfo/aalmoghalis/inventorz/activity/Bill_edit;
+
+    invoke-virtual {p1}, Linfo/aalmoghalis/inventorz/activity/Bill_edit;->getCurrentFocus()Landroid/view/View;
+
+    move-result-object p1
+
+    iget-object v0, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;->d:Landroid/view/View;
+
+    if-eqz v0, :cond_4
+
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
+
+    new-instance v1, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1$a;
+
+    invoke-direct {v1, p0, p1}, Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1$a;-><init>(Linfo/aalmoghalis/inventorz/activity/Bill_edit$a1;Landroid/view/View;)V
+
+    const-wide/16 v2, 0x64
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    :cond_4
+    return-void
+.end method

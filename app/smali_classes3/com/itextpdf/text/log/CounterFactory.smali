@@ -1,0 +1,87 @@
+.class public Lcom/itextpdf/text/log/CounterFactory;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# static fields
+.field private static myself:Lcom/itextpdf/text/log/CounterFactory;
+
+
+# instance fields
+.field private counter:Lcom/itextpdf/text/log/Counter;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lcom/itextpdf/text/log/CounterFactory;
+
+    invoke-direct {v0}, Lcom/itextpdf/text/log/CounterFactory;-><init>()V
+
+    sput-object v0, Lcom/itextpdf/text/log/CounterFactory;->myself:Lcom/itextpdf/text/log/CounterFactory;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Lcom/itextpdf/text/log/DefaultCounter;
+
+    invoke-direct {v0}, Lcom/itextpdf/text/log/DefaultCounter;-><init>()V
+
+    iput-object v0, p0, Lcom/itextpdf/text/log/CounterFactory;->counter:Lcom/itextpdf/text/log/Counter;
+
+    return-void
+.end method
+
+.method public static getCounter(Ljava/lang/Class;)Lcom/itextpdf/text/log/Counter;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Class<",
+            "*>;)",
+            "Lcom/itextpdf/text/log/Counter;"
+        }
+    .end annotation
+
+    sget-object v0, Lcom/itextpdf/text/log/CounterFactory;->myself:Lcom/itextpdf/text/log/CounterFactory;
+
+    iget-object v0, v0, Lcom/itextpdf/text/log/CounterFactory;->counter:Lcom/itextpdf/text/log/Counter;
+
+    invoke-interface {v0, p0}, Lcom/itextpdf/text/log/Counter;->getCounter(Ljava/lang/Class;)Lcom/itextpdf/text/log/Counter;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static getInstance()Lcom/itextpdf/text/log/CounterFactory;
+    .locals 1
+
+    sget-object v0, Lcom/itextpdf/text/log/CounterFactory;->myself:Lcom/itextpdf/text/log/CounterFactory;
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public getCounter()Lcom/itextpdf/text/log/Counter;
+    .locals 1
+
+    iget-object v0, p0, Lcom/itextpdf/text/log/CounterFactory;->counter:Lcom/itextpdf/text/log/Counter;
+
+    return-object v0
+.end method
+
+.method public setCounter(Lcom/itextpdf/text/log/Counter;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/itextpdf/text/log/CounterFactory;->counter:Lcom/itextpdf/text/log/Counter;
+
+    return-void
+.end method

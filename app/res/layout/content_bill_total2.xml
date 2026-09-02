@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="right" android:orientation="horizontal" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="100.0" app:layout_behavior="@string/appbar_scrolling_view_behavior"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RadioGroup android:gravity="center" android:layout_gravity="end" android:orientation="horizontal" android:id="@id/radiogroup1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="50.0">
+        <RadioButton android:id="@id/radiobutton2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="نسبة" />
+        <RadioButton android:id="@id/radiobutton1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="مبلغ" />
+    </RadioGroup>
+    <EditText android:gravity="center|right" android:id="@id/item_price" android:background="@drawable/table_row_bg5" android:layout_width="wrap_content" android:layout_height="32.0dip" android:text="" android:hint="@string/total_disc" android:singleLine="true" android:layout_weight="50.0" android:inputType="numberDecimal" />
+    <TextView android:gravity="center|right" android:id="@id/item_price_hdr" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/total_with_discount" android:layout_weight="20.0" />
+</LinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="100.0"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <AutoCompleteTextView android:gravity="center" android:id="@id/account_name" android:background="@drawable/table_row_bg5" android:nextFocusLeft="@id/cus_name" android:nextFocusRight="@id/cus_name" android:nextFocusUp="@id/cus_name" android:nextFocusDown="@id/cus_name" android:layout_width="wrap_content" android:layout_height="45.0dip" android:hint="@string/br_email" android:singleLine="true" android:layout_weight="100.0" android:imeOptions="actionNext" android:nextFocusForward="@id/cus_name" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="100.0"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <ImageView android:gravity="center_horizontal" android:id="@id/img_cus_type" android:background="@android:color/white" android:clickable="false" android:duplicateParentState="false" android:layout_width="0.0dip" android:layout_height="30.0dip" android:src="@drawable/list4" android:layout_weight="15.0" />
+        <AutoCompleteTextView android:gravity="center" android:id="@id/account_parent" android:background="@drawable/table_row_bg5" android:padding="5.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:hint="@string/branch" android:singleLine="true" android:layout_weight="85.0" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="100.0"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <ImageView android:gravity="center_horizontal" android:id="@id/img_cash_type" android:background="@android:color/white" android:clickable="false" android:duplicateParentState="false" android:layout_width="0.0dip" android:layout_height="30.0dip" android:src="@drawable/list4" android:layout_weight="15.0" />
+        <AutoCompleteTextView android:gravity="center" android:id="@id/cash_name" android:background="@drawable/table_row_bg5" android:padding="5.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:hint="@string/cash_account_name" android:singleLine="true" android:layout_weight="85.0" />
+    </LinearLayout>
+</LinearLayout>

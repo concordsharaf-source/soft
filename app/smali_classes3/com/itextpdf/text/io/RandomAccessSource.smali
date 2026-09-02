@@ -1,0 +1,17 @@
+.class public interface abstract Lcom/itextpdf/text/io/RandomAccessSource;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# virtual methods
+.method public abstract close()V
+.end method
+
+.method public abstract get(J)I
+.end method
+
+.method public abstract get(J[BII)I
+.end method
+
+.method public abstract length()J
+.end method

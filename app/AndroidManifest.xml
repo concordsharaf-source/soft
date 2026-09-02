@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="35" android:compileSdkVersionCodename="15" package="info.aalmoghalis.inventorz" platformBuildVersionCode="35" platformBuildVersionName="15">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_PROFILE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_VISUAL_USER_SELECTED"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_SYNC_STATS"/>
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <queries>
+        <intent>
+            <action android:name="com.android.vending.billing.InAppBillingService.BIND"/>
+        </intent>
+        <intent>
+            <action android:name="com.google.android.apps.play.billingtestcompanion.BillingOverrideService.BIND"/>
+        </intent>
+    </queries>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <permission android:name="info.aalmoghalis.inventorz.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature"/>
+    <uses-permission android:name="info.aalmoghalis.inventorz.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.front" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.landscape" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <application android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:backupAgent="info.aalmoghalis.inventorz.activity.MyBackupAgent" android:extractNativeLibs="true" android:fullBackupContent="@xml/my_backup_rules" android:hardwareAccelerated="true" android:hasFragileUserData="true" android:icon="@mipmap/ic_launcher" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.lang.App" android:networkSecurityConfig="@xml/network_security_config" android:preserveLegacyExternalStorage="true" android:requestLegacyExternalStorage="true" android:restoreAnyVersion="true" android:supportsRtl="false" android:theme="@style/AppTheme" android:usesCleartextTraffic="true">
+        <activity android:exported="false" android:name="info.aalmoghalis.inventorz.activity.logoActivity" android:theme="@style/Theme.AppCompat.Transparent.NoActionBar"/>
+        <activity android:exported="false" android:name="info.aalmoghalis.inventorz.activity.activationActivity" android:theme="@style/Theme.AppCompat.Transparent.NoActionBar"/>
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main" android:theme="@style/AppTheme.NoActionBar" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Bills2" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Adj2" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Offers" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Orders" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Bills2_Report" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Revenue_item_Report" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Revenue_customer_Report" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Bills_customer_Report" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Revenue_item_Report_Det" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Moves2" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Invs3" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Bill_edit" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Bill_adj2" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Offer_edit" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Order_edit" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Bill_move" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Bill_inv" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Bill_inv_check" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Bill_adj" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Expenses" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Report1_item_balance" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Report1_item_balance2" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Report2_supp_balance" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Report3_expense_balance" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Report4_purchases" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Report6_expenses" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Report7_profit_loss" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Report8_item_movement" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.supp_balance_det" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Reports_list" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Action_list" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.helper.Calculator" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main" android:theme="@style/Theme.AppCompat.Light.Dialog"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Info_edit" android:parentActivityName="info.aalmoghalis.inventorz.activity.Action_list" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Info_edit2" android:parentActivityName="info.aalmoghalis.inventorz.activity.Action_list" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Info_edit3" android:parentActivityName="info.aalmoghalis.inventorz.activity.Action_list" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.item_price_exp" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.currency_price_exp" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Frag_Report2_amount_exp" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Customer_Det_List_edit" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Customer_Det_List_edit2" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Customer_Det_List_edit3" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Customer_Det_List_edit4" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Customer_Det_List_edit5" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Customer_Det_List_edit6" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.helper.Signature_add" android:parentActivityName="info.aalmoghalis.inventorz.activity.SettingsActivity" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.helper.Approval_add" android:parentActivityName="info.aalmoghalis.inventorz.activity.SettingsActivity" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.helper.Auto_sms_add" android:parentActivityName="info.aalmoghalis.inventorz.activity.SettingsActivity" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.helper.Excel_add" android:parentActivityName="info.aalmoghalis.inventorz.activity.SettingsActivity" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.helper.Barcode_add" android:parentActivityName="info.aalmoghalis.inventorz.activity.SettingsActivity" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Frag_Report3_item_balance" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Accounts_Total_Report" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Daily_Trans_Report" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Daily_Doc_Report" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Daily_Curr_Report" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Trail_Balance_Report" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Revaluation_Currency_Report" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Account_Balance_Report" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Balance_Sheet_Report" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Money_Balance_Report" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Frag_Report5_amount_qty_exp" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.old.CurrList_edit" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.old.Tax_edit" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.zatca.ZatcaSettingsActivity" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.old.Unit_item_edit" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.old.GroupList_edit" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.old.itemType_edit" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.old.UnitList_edit" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.fcm.nodeJS" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.fcm.feed_notification" android:parentActivityName="info.aalmoghalis.inventorz.fcm.nodeJS" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.old.BranchList_edit" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.old.CusLimit_edit" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Report9_expenses_balance_daily" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Report9_expenses_balance_daily_det" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Report8_item_movement_daily" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.pdf_view" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.PdfViewerActivity" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Account_Tree_Main" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="info.aalmoghalis.inventorz.activity.Account_Tree_Det" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAIjAECy2BkhanADmCwHsGM6911A5q0-a1jVir9Lw"/>
+        <activity android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.activity.SettingsActivity"/>
+        <activity android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.activity.LoginActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.activity.LoginPwdActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.activity.Google_drive_list"/>
+        <activity android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.activity.InAppBillingActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:exported="true" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.printBT.MainActivity" android:parentActivityName="info.aalmoghalis.inventorz.activity.SettingsActivity" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:exported="true" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.printBT.MainActivity2" android:parentActivityName="info.aalmoghalis.inventorz.activity.SettingsActivity" android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED"/>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:exported="true" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.printBT.MainActivity3" android:parentActivityName="info.aalmoghalis.inventorz.activity.SettingsActivity" android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED"/>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:exported="true" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.printBT.MainActivity4" android:parentActivityName="info.aalmoghalis.inventorz.activity.SettingsActivity" android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED"/>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.old.Reminders"/>
+        <activity android:configChanges="orientation|screenSize" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.old.Users"/>
+        <activity android:configChanges="orientation|screenSize" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.fcm.online_status"/>
+        <activity android:configChanges="orientation|screenSize" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.old.UserPriv"/>
+        <meta-data android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" android:resource="@xml/device_filter"/>
+        <activity android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.printBT.DeviceListActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.fcm.MainActivity" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.fcm.LoginActivity" android:parentActivityName="info.aalmoghalis.inventorz.activity.FragmentStatePagerSupport_Main" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <receiver android:exported="true" android:label="PhoneStatListener" android:name="info.aalmoghalis.inventorz.online.PhoneStatListener">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.permission.READ_PHONE_STATE"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="info.aalmoghalis.inventorz.online.DbBackupListener" android:process=":remote"/>
+        <receiver android:enabled="false" android:exported="true" android:name="info.aalmoghalis.inventorz.online.DeviceBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="info.aalmoghalis.inventorz.activity.TutWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/tutlist_appwidget"/>
+        </receiver>
+        <service android:exported="false" android:name="info.aalmoghalis.inventorz.threads.HelloService"/>
+        <service android:exported="false" android:name="info.aalmoghalis.inventorz.threads.SocketService"/>
+        <service android:exported="false" android:name="info.aalmoghalis.inventorz.threads.SocketService2"/>
+        <service android:enabled="true" android:exported="true" android:name="info.aalmoghalis.inventorz.online.DbBackupListener_Service" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:enabled="true" android:exported="true" android:name="info.aalmoghalis.inventorz.threads.HelloService_Job" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:enabled="false" android:exported="false" android:name="com.google.android.gms.metadata.ModuleDependencies">
+            <intent-filter>
+                <action android:name="com.google.android.gms.metadata.MODULE_DEPENDENCIES"/>
+            </intent-filter>
+            <meta-data android:name="photopicker_activity:0:required" android:value=""/>
+        </service>
+        <receiver android:name="info.aalmoghalis.inventorz.online.ReminderListener" android:process=":remote"/>
+        <receiver android:exported="true" android:name="info.aalmoghalis.inventorz.fcm.Firestore_Receiver">
+            <intent-filter>
+                <action android:name="info.aalmoghalis.inventorz.ALERT_FROM_SERVICE"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="true" android:name="info.aalmoghalis.inventorz.online.ReminderListener_Service" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:exported="false" android:name="info.aalmoghalis.inventorz.fcm.MyGcmPushReceiver">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="info.aalmoghalis.inventorz.provider" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths"/>
+        </provider>
+        <service android:exported="true" android:name="info.aalmoghalis.inventorz.printservice.ThermalPrintService" android:permission="android.permission.BIND_PRINT_SERVICE">
+            <intent-filter>
+                <action android:name="android.printservice.PrintService"/>
+            </intent-filter>
+            <meta-data android:name="android.printservice" android:resource="@xml/printservice"/>
+        </service>
+        <service android:exported="true" android:name="info.aalmoghalis.inventorz.sync.SyncService">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter"/>
+            </intent-filter>
+            <meta-data android:name="android.content.SyncAdapter" android:resource="@xml/syncadapter"/>
+        </service>
+        <provider android:authorities="info.aalmoghalis.inventorz.sync.provider" android:exported="false" android:name="info.aalmoghalis.inventorz.sync.StubProvider" android:syncable="true"/>
+        <service android:exported="false" android:name="info.aalmoghalis.inventorz.sync.AuthenticatorService">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator"/>
+            </intent-filter>
+            <meta-data android:name="android.accounts.AccountAuthenticator" android:resource="@xml/authenticator"/>
+        </service>
+        <activity android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.printservice.MainActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.printservice.SettingsActivity" android:permission="android.permission.BIND_PRINT_SERVICE"/>
+        <activity android:label="شرف سوفت" android:name="info.aalmoghalis.inventorz.printservice.AddPrinterActivity" android:permission="android.permission.BIND_PRINT_SERVICE"/>
+        <activity android:clearTaskOnLaunch="true" android:name="com.journeyapps.barcodescanner.CaptureActivity" android:screenOrientation="fullSensor" android:stateNotNeeded="true" android:theme="@style/zxing_CaptureTheme" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <meta-data android:name="com.google.android.play.billingclient.version" android:value="8.0.0"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:exported="false" android:name="com.android.billingclient.api.ProxyBillingActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:exported="false" android:name="com.android.billingclient.api.ProxyBillingActivityV2" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" android:visibleToInstantApps="true"/>
+        <service android:exported="false" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:directBootAware="true" android:exported="false" android:name="com.google.firebase.components.ComponentDiscoveryService">
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.iid.Registrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <provider android:authorities="info.aalmoghalis.inventorz.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <uses-library android:name="androidx.window.extensions" android:required="false"/>
+        <uses-library android:name="androidx.window.sidecar" android:required="false"/>
+        <provider android:authorities="info.aalmoghalis.inventorz.androidx-startup" android:exported="false" android:name="androidx.startup.InitializationProvider">
+            <meta-data android:name="androidx.work.WorkManagerInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.profileinstaller.ProfileInstallerInitializer" android:value="androidx.startup"/>
+        </provider>
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_alarm_service_default" android:exported="false" android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"/>
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_job_service_default" android:exported="true" android:name="androidx.work.impl.background.systemjob.SystemJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_foreground_service_default" android:exported="false" android:name="androidx.work.impl.foreground.SystemForegroundService"/>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="false" android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"/>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_OKAY"/>
+                <action android:name="android.intent.action.BATTERY_LOW"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.DEVICE_STORAGE_LOW"/>
+                <action android:name="android.intent.action.DEVICE_STORAGE_OK"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="@bool/enable_system_alarm_service_default" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver">
+            <intent-filter>
+                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="true" android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver" android:permission="android.permission.DUMP">
+            <intent-filter>
+                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS"/>
+            </intent-filter>
+        </receiver>
+        <service android:directBootAware="true" android:exported="false" android:name="androidx.room.MultiInstanceInvalidationService"/>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="true" android:name="androidx.profileinstaller.ProfileInstallReceiver" android:permission="android.permission.DUMP">
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SKIP_FILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery">
+            <meta-data android:name="backend:com.google.android.datatransport.cct.CctBackendFactory" android:value="cct"/>
+        </service>
+        <service android:exported="false" android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="false" android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"/>
+    </application>
+</manifest>

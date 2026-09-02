@@ -1,0 +1,33 @@
+.class public Lcom/itextpdf/text/pdf/parser/MarkedContentRenderFilter;
+.super Lcom/itextpdf/text/pdf/parser/RenderFilter;
+.source "SourceFile"
+
+
+# instance fields
+.field private mcid:I
+
+
+# direct methods
+.method public constructor <init>(I)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/itextpdf/text/pdf/parser/RenderFilter;-><init>()V
+
+    iput p1, p0, Lcom/itextpdf/text/pdf/parser/MarkedContentRenderFilter;->mcid:I
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public allowText(Lcom/itextpdf/text/pdf/parser/TextRenderInfo;)Z
+    .locals 1
+
+    iget v0, p0, Lcom/itextpdf/text/pdf/parser/MarkedContentRenderFilter;->mcid:I
+
+    invoke-virtual {p1, v0}, Lcom/itextpdf/text/pdf/parser/TextRenderInfo;->hasMcid(I)Z
+
+    move-result p1
+
+    return p1
+.end method

@@ -1,0 +1,59 @@
+.class public Lcom/itextpdf/text/xml/xmp/PdfProperties;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# static fields
+.field public static final KEYWORDS:Ljava/lang/String; = "Keywords"
+
+.field public static final PART:Ljava/lang/String; = "part"
+
+.field public static final PRODUCER:Ljava/lang/String; = "Producer"
+
+.field public static final VERSION:Ljava/lang/String; = "PDFVersion"
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static setKeywords(Lcom/itextpdf/xmp/XMPMeta;Ljava/lang/String;)V
+    .locals 2
+
+    const-string v0, "http://ns.adobe.com/pdf/1.3/"
+
+    const-string v1, "Keywords"
+
+    invoke-interface {p0, v0, v1, p1}, Lcom/itextpdf/xmp/XMPMeta;->setProperty(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static setProducer(Lcom/itextpdf/xmp/XMPMeta;Ljava/lang/String;)V
+    .locals 2
+
+    const-string v0, "http://ns.adobe.com/pdf/1.3/"
+
+    const-string v1, "Producer"
+
+    invoke-interface {p0, v0, v1, p1}, Lcom/itextpdf/xmp/XMPMeta;->setProperty(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static setVersion(Lcom/itextpdf/xmp/XMPMeta;Ljava/lang/String;)V
+    .locals 2
+
+    const-string v0, "http://ns.adobe.com/pdf/1.3/"
+
+    const-string v1, "PDFVersion"
+
+    invoke-interface {p0, v0, v1, p1}, Lcom/itextpdf/xmp/XMPMeta;->setProperty(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+
+    return-void
+.end method

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:tag="cards main container" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.cardview.widget.CardView android:id="@id/card_view" android:layout_width="fill_parent" android:layout_height="wrap_content" card_view:cardBackgroundColor="@color/white" card_view:cardCornerRadius="10.0dip" card_view:cardElevation="5.0dip" card_view:cardUseCompatPadding="true" xmlns:card_view="http://schemas.android.com/apk/res-auto">
+        <LinearLayout android:orientation="vertical" android:id="@id/row_all" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:id="@id/row1" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="2.0">
+                    <LinearLayout android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:weightSum="3.0">
+                        <TextView android:textAppearance="?android:textAppearanceSmall" android:layout_gravity="center_horizontal" android:id="@id/hide1" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="hide" android:layout_weight="1.0" />
+                        <TextView android:textAppearance="?android:textAppearanceSmall" android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@id/branch_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Branch" android:layout_weight="1.0" />
+                        <TextView android:textAppearance="?android:textAppearanceSmall" android:textStyle="bold" android:gravity="center" android:id="@id/id_no" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ID_NO" android:layout_weight="1.0" />
+                    </LinearLayout>
+                    <TextView android:textAppearance="?android:textAppearanceMedium" android:layout_gravity="center_horizontal" android:id="@id/user_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="Cus Name" />
+                    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <ImageView android:id="@id/img_edit" android:tag="image_tag" android:padding="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:src="@android:drawable/ic_menu_edit" />
+                        <ImageView android:id="@id/img_delete" android:tag="image_tag" android:padding="2.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:src="@android:drawable/ic_menu_delete" />
+                        <TextView android:textAppearance="?android:textAppearanceSmall" android:gravity="center" android:layout_gravity="center" android:id="@id/cash_name" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:text="Cash" android:layout_weight="1.0" />
+                        <ImageView android:id="@id/img_setting" android:tag="image_tag" android:padding="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:src="@android:drawable/ic_menu_preferences" />
+                        <ImageView android:id="@id/img_report" android:tag="image_tag" android:padding="2.0dip" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:src="@android:drawable/ic_menu_today" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

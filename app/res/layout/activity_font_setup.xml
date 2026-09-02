@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="end" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textStyle="bold" android:textColor="#ff888888" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" android:text="@string/font_color_setting" />
+        <LinearLayout android:orientation="vertical" android:id="@id/preview_container" android:background="@android:color/white" android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:elevation="4.0dip">
+            <TextView android:textSize="22.0sp" android:textStyle="bold" android:id="@id/preview_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="12.0dip" android:text="@string/title" />
+            <TextView android:textSize="14.0sp" android:id="@id/preview_body" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/simple_text" />
+        </LinearLayout>
+        <View android:background="#ffcccccc" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="8.0dip" android:layout_marginBottom="8.0dip" />
+        <TextView android:textSize="16.0sp" android:textStyle="bold" android:id="@id/label_font_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/font_size" />
+        <SeekBar android:id="@id/seekbar_font" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:max="12" android:progress="2" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="?selectableItemBackground" android:padding="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="32.0dip" android:onClick="pickTitleColor">
+            <View android:id="@id/box_color_title" android:background="#ff000000" android:layout_width="48.0dip" android:layout_height="48.0dip" android:layout_marginEnd="8.0dip" android:elevation="2.0dip" />
+            <TextView android:textSize="16.0sp" android:textStyle="bold" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/font_title_color" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="?selectableItemBackground" android:padding="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:onClick="pickBodyColor">
+            <View android:id="@id/box_color_body" android:background="#ff000000" android:layout_width="48.0dip" android:layout_height="48.0dip" android:layout_marginEnd="8.0dip" android:elevation="2.0dip" />
+            <TextView android:textSize="16.0sp" android:textStyle="bold" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/font_text_color" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="?selectableItemBackground" android:padding="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:onClick="pickHeaderColor">
+            <View android:id="@id/box_color_header" android:background="#ffe0e0e0" android:layout_width="48.0dip" android:layout_height="48.0dip" android:layout_marginEnd="8.0dip" android:elevation="2.0dip" />
+            <TextView android:textSize="16.0sp" android:textStyle="bold" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/font_header_background_color" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="?selectableItemBackground" android:padding="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:onClick="pickCreditColor">
+            <View android:id="@id/box_credit_color" android:background="#ff5e1025" android:layout_width="48.0dip" android:layout_height="48.0dip" android:layout_marginEnd="8.0dip" android:elevation="2.0dip" />
+            <TextView android:textSize="16.0sp" android:textStyle="bold" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/font_credit_color" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="?selectableItemBackground" android:padding="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:onClick="pickDebitColor">
+            <View android:id="@id/box_debit_color" android:background="#ff2a594c" android:layout_width="48.0dip" android:layout_height="48.0dip" android:layout_marginEnd="8.0dip" android:elevation="2.0dip" />
+            <TextView android:textSize="16.0sp" android:textStyle="bold" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/font_debit_color" android:layout_weight="1.0" />
+        </LinearLayout>
+        <Button android:textColor="@android:color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:text="@string/btn_save" android:onClick="saveSettings" android:backgroundTint="@color/bk_color" />
+    </LinearLayout>
+</ScrollView>

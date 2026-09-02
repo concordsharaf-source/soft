@@ -1,0 +1,183 @@
+.class public Linfo/aalmoghalis/inventorz/printBT/MainActivity3$e;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Linfo/aalmoghalis/inventorz/printBT/MainActivity3;->G()V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+
+# instance fields
+.field public final synthetic a:Linfo/aalmoghalis/inventorz/printBT/MainActivity3;
+
+
+# direct methods
+.method public constructor <init>(Linfo/aalmoghalis/inventorz/printBT/MainActivity3;)V
+    .locals 0
+
+    iput-object p1, p0, Linfo/aalmoghalis/inventorz/printBT/MainActivity3$e;->a:Linfo/aalmoghalis/inventorz/printBT/MainActivity3;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public run()V
+    .locals 7
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x0
+
+    :goto_0
+    sget-object v2, LZ00;->j0:Ljava/util/List;
+
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    if-ge v1, v2, :cond_1
+
+    iget-object v2, p0, Linfo/aalmoghalis/inventorz/printBT/MainActivity3$e;->a:Linfo/aalmoghalis/inventorz/printBT/MainActivity3;
+
+    sget-object v3, LZ00;->j0:Ljava/util/List;
+
+    invoke-interface {v3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, [Ljava/lang/String;
+
+    aget-object v3, v3, v0
+
+    iput-object v3, v2, Linfo/aalmoghalis/inventorz/printBT/MainActivity3;->x:Ljava/lang/String;
+
+    iget-object v2, p0, Linfo/aalmoghalis/inventorz/printBT/MainActivity3$e;->a:Linfo/aalmoghalis/inventorz/printBT/MainActivity3;
+
+    sget-object v3, LZ00;->j0:Ljava/util/List;
+
+    invoke-interface {v3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, [Ljava/lang/String;
+
+    const/4 v4, 0x1
+
+    aget-object v3, v3, v4
+
+    iput-object v3, v2, Linfo/aalmoghalis/inventorz/printBT/MainActivity3;->y:Ljava/lang/String;
+
+    if-nez v1, :cond_0
+
+    iget-object v2, p0, Linfo/aalmoghalis/inventorz/printBT/MainActivity3$e;->a:Linfo/aalmoghalis/inventorz/printBT/MainActivity3;
+
+    invoke-virtual {v2}, Linfo/aalmoghalis/inventorz/printBT/MainActivity3;->D()V
+
+    :cond_0
+    new-instance v2, LWH;
+
+    invoke-direct {v2}, LWH;-><init>()V
+
+    iget-object v2, p0, Linfo/aalmoghalis/inventorz/printBT/MainActivity3$e;->a:Linfo/aalmoghalis/inventorz/printBT/MainActivity3;
+
+    iget-object v3, v2, Linfo/aalmoghalis/inventorz/printBT/MainActivity3;->F:Ljava/lang/String;
+
+    iput-object v3, v2, Linfo/aalmoghalis/inventorz/printBT/MainActivity3;->G:Ljava/lang/String;
+
+    iget-object v4, v2, Linfo/aalmoghalis/inventorz/printBT/MainActivity3;->p:LZ00;
+
+    iget-object v5, v2, Linfo/aalmoghalis/inventorz/printBT/MainActivity3;->z:Ljava/lang/String;
+
+    iget-object v2, v2, Linfo/aalmoghalis/inventorz/printBT/MainActivity3;->f:Landroid/widget/TextView;
+
+    const-string v6, "print2"
+
+    invoke-virtual {v4, v3, v5, v2, v6}, LZ00;->ae(Ljava/lang/String;Ljava/lang/String;Landroid/widget/TextView;Ljava/lang/String;)I
+
+    iget-object v2, p0, Linfo/aalmoghalis/inventorz/printBT/MainActivity3$e;->a:Linfo/aalmoghalis/inventorz/printBT/MainActivity3;
+
+    iget-object v3, v2, Linfo/aalmoghalis/inventorz/printBT/MainActivity3;->p:LZ00;
+
+    iget-object v4, v2, Linfo/aalmoghalis/inventorz/printBT/MainActivity3;->G:Ljava/lang/String;
+
+    iget-object v5, v2, Linfo/aalmoghalis/inventorz/printBT/MainActivity3;->z:Ljava/lang/String;
+
+    iget-object v2, v2, Linfo/aalmoghalis/inventorz/printBT/MainActivity3;->f:Landroid/widget/TextView;
+
+    const-string v6, "print"
+
+    invoke-virtual {v3, v4, v5, v2, v6}, LZ00;->ae(Ljava/lang/String;Ljava/lang/String;Landroid/widget/TextView;Ljava/lang/String;)I
+
+    :try_start_0
+    iget-object v2, p0, Linfo/aalmoghalis/inventorz/printBT/MainActivity3$e;->a:Linfo/aalmoghalis/inventorz/printBT/MainActivity3;
+
+    invoke-virtual {v2}, Linfo/aalmoghalis/inventorz/printBT/MainActivity3;->F()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
+
+    :catch_0
+    move-exception v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v2}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, ""
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "print_err2="
+
+    invoke-static {v3, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_1
+    :try_start_1
+    new-instance v2, Landroid/os/Message;
+
+    invoke-direct {v2}, Landroid/os/Message;-><init>()V
+
+    const-string v3, "1"
+
+    iput-object v3, v2, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    iget-object v3, p0, Linfo/aalmoghalis/inventorz/printBT/MainActivity3$e;->a:Linfo/aalmoghalis/inventorz/printBT/MainActivity3;
+
+    iget-object v3, v3, Linfo/aalmoghalis/inventorz/printBT/MainActivity3;->w:Landroid/os/Handler;
+
+    invoke-virtual {v3, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+
+    :catch_1
+    add-int/lit8 v1, v1, 0x1
+
+    goto/16 :goto_0
+
+    :cond_1
+    return-void
+.end method

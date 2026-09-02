@@ -1,0 +1,132 @@
+.class public Lcom/itextpdf/text/pdf/PdfConcatenate;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# instance fields
+.field protected copy:Lcom/itextpdf/text/pdf/PdfCopy;
+
+.field protected document:Lcom/itextpdf/text/Document;
+
+
+# direct methods
+.method public constructor <init>(Ljava/io/OutputStream;)V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, v0}, Lcom/itextpdf/text/pdf/PdfConcatenate;-><init>(Ljava/io/OutputStream;Z)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/io/OutputStream;Z)V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Lcom/itextpdf/text/Document;
+
+    invoke-direct {v0}, Lcom/itextpdf/text/Document;-><init>()V
+
+    iput-object v0, p0, Lcom/itextpdf/text/pdf/PdfConcatenate;->document:Lcom/itextpdf/text/Document;
+
+    if-eqz p2, :cond_0
+
+    new-instance p2, Lcom/itextpdf/text/pdf/PdfSmartCopy;
+
+    iget-object v0, p0, Lcom/itextpdf/text/pdf/PdfConcatenate;->document:Lcom/itextpdf/text/Document;
+
+    invoke-direct {p2, v0, p1}, Lcom/itextpdf/text/pdf/PdfSmartCopy;-><init>(Lcom/itextpdf/text/Document;Ljava/io/OutputStream;)V
+
+    iput-object p2, p0, Lcom/itextpdf/text/pdf/PdfConcatenate;->copy:Lcom/itextpdf/text/pdf/PdfCopy;
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p2, Lcom/itextpdf/text/pdf/PdfCopy;
+
+    iget-object v0, p0, Lcom/itextpdf/text/pdf/PdfConcatenate;->document:Lcom/itextpdf/text/Document;
+
+    invoke-direct {p2, v0, p1}, Lcom/itextpdf/text/pdf/PdfCopy;-><init>(Lcom/itextpdf/text/Document;Ljava/io/OutputStream;)V
+
+    iput-object p2, p0, Lcom/itextpdf/text/pdf/PdfConcatenate;->copy:Lcom/itextpdf/text/pdf/PdfCopy;
+
+    :goto_0
+    return-void
+.end method
+
+
+# virtual methods
+.method public addPages(Lcom/itextpdf/text/pdf/PdfReader;)I
+    .locals 4
+
+    invoke-virtual {p0}, Lcom/itextpdf/text/pdf/PdfConcatenate;->open()V
+
+    invoke-virtual {p1}, Lcom/itextpdf/text/pdf/PdfReader;->getNumberOfPages()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    :goto_0
+    if-gt v1, v0, :cond_0
+
+    iget-object v2, p0, Lcom/itextpdf/text/pdf/PdfConcatenate;->copy:Lcom/itextpdf/text/pdf/PdfCopy;
+
+    invoke-virtual {v2, p1, v1}, Lcom/itextpdf/text/pdf/PdfCopy;->getImportedPage(Lcom/itextpdf/text/pdf/PdfReader;I)Lcom/itextpdf/text/pdf/PdfImportedPage;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lcom/itextpdf/text/pdf/PdfCopy;->addPage(Lcom/itextpdf/text/pdf/PdfImportedPage;)V
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v1, p0, Lcom/itextpdf/text/pdf/PdfConcatenate;->copy:Lcom/itextpdf/text/pdf/PdfCopy;
+
+    invoke-virtual {v1, p1}, Lcom/itextpdf/text/pdf/PdfCopy;->freeReader(Lcom/itextpdf/text/pdf/PdfReader;)V
+
+    invoke-virtual {p1}, Lcom/itextpdf/text/pdf/PdfReader;->close()V
+
+    return v0
+.end method
+
+.method public close()V
+    .locals 1
+
+    iget-object v0, p0, Lcom/itextpdf/text/pdf/PdfConcatenate;->document:Lcom/itextpdf/text/Document;
+
+    invoke-virtual {v0}, Lcom/itextpdf/text/Document;->close()V
+
+    return-void
+.end method
+
+.method public getWriter()Lcom/itextpdf/text/pdf/PdfCopy;
+    .locals 1
+
+    iget-object v0, p0, Lcom/itextpdf/text/pdf/PdfConcatenate;->copy:Lcom/itextpdf/text/pdf/PdfCopy;
+
+    return-object v0
+.end method
+
+.method public open()V
+    .locals 1
+
+    iget-object v0, p0, Lcom/itextpdf/text/pdf/PdfConcatenate;->document:Lcom/itextpdf/text/Document;
+
+    invoke-virtual {v0}, Lcom/itextpdf/text/Document;->isOpen()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lcom/itextpdf/text/pdf/PdfConcatenate;->document:Lcom/itextpdf/text/Document;
+
+    invoke-virtual {v0}, Lcom/itextpdf/text/Document;->open()V
+
+    :cond_0
+    return-void
+.end method

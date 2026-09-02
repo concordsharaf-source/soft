@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TableLayout android:id="@id/bill_hdr3" android:padding="3.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TableRow android:gravity="right" android:paddingRight="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textStyle="bold" android:gravity="right" android:id="@id/income_hdr" android:layout_width="fill_parent" android:layout_height="30.0dip" android:hint="@string/income" android:layout_weight="1.0" />
+        </TableRow>
+        <View android:id="@id/primerdivisor_1" android:background="@android:color/darker_gray" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+        <TableRow android:gravity="right" android:paddingRight="20.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:gravity="right" android:id="@id/f1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="0" android:layout_weight="1.0" />
+            <TextView android:gravity="center|right" android:id="@id/sales_tot_hdr" android:layout_width="100.0dip" android:layout_height="30.0dip" android:hint="@string/sales_total" />
+        </TableRow>
+        <TableRow android:gravity="right" android:paddingRight="20.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:gravity="right" android:id="@id/f2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="0" android:layout_weight="1.0" />
+            <TextView android:gravity="center|right" android:id="@id/income_other_hdr" android:layout_width="100.0dip" android:layout_height="30.0dip" android:hint="@string/other" />
+        </TableRow>
+        <View android:id="@id/primerdivisor_2" android:background="@android:color/darker_gray" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+        <TableRow android:gravity="right" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:textStyle="bold" android:gravity="left" android:id="@id/f3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="0" android:layout_weight="1.0" />
+            <TextView android:textStyle="bold" android:gravity="center|right" android:id="@id/income_tot_hdr" android:layout_width="100.0dip" android:layout_height="40.0dip" android:hint="@string/income_tot" />
+        </TableRow>
+        <View android:id="@id/primerdivisor_5" android:background="@android:color/background_dark" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+    </TableLayout>
+    <TableLayout android:id="@id/bill_hdr2" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TableRow android:gravity="right" android:paddingRight="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textStyle="bold" android:gravity="right" android:id="@id/outcome_hdr" android:layout_width="fill_parent" android:layout_height="30.0dip" android:hint="@string/outcome" android:layout_weight="1.0" />
+        </TableRow>
+        <View android:id="@id/primerdivisor_3" android:background="@android:color/darker_gray" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+        <TableRow android:gravity="right" android:paddingRight="20.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:gravity="right" android:id="@id/f4" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="0" android:layout_weight="1.0" />
+            <TextView android:gravity="center|right" android:id="@id/supplier_tot_hdr" android:layout_width="100.0dip" android:layout_height="30.0dip" android:hint="@string/purchase_tot" />
+        </TableRow>
+        <TableRow android:gravity="right" android:paddingRight="20.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:gravity="right" android:id="@id/f5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="0" android:layout_weight="1.0" />
+            <TextView android:gravity="center|right" android:id="@id/outcome_other_hdr" android:layout_width="100.0dip" android:layout_height="30.0dip" android:hint="@string/other" />
+        </TableRow>
+        <View android:id="@id/primerdivisor_4" android:background="@android:color/darker_gray" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+        <TableRow android:gravity="right" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:textStyle="bold" android:gravity="left" android:id="@id/f6" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="0" android:layout_weight="1.0" />
+            <TextView android:textStyle="bold" android:gravity="center|right" android:id="@id/outcome_tot_hdr" android:layout_width="100.0dip" android:layout_height="40.0dip" android:hint="@string/outcome_tot" />
+        </TableRow>
+        <View android:id="@id/primerdivisor_6" android:background="@android:color/background_dark" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+    </TableLayout>
+    <TableLayout android:id="@id/bill_hdr" android:padding="3.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TableRow android:gravity="right" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:textStyle="bold" android:gravity="left" android:id="@id/f7" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="0" android:layout_weight="1.0" />
+            <TextView android:textStyle="bold" android:gravity="center|right" android:id="@id/net_tot_hdr" android:layout_width="100.0dip" android:layout_height="30.0dip" android:hint="@string/net_tot" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

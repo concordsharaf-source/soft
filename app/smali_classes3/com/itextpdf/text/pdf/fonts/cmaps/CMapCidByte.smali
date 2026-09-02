@@ -1,0 +1,95 @@
+.class public Lcom/itextpdf/text/pdf/fonts/cmaps/CMapCidByte;
+.super Lcom/itextpdf/text/pdf/fonts/cmaps/AbstractCMap;
+.source "SourceFile"
+
+
+# instance fields
+.field private final EMPTY:[B
+
+.field private map:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap<",
+            "Ljava/lang/Integer;",
+            "[B>;"
+        }
+    .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 1
+
+    invoke-direct {p0}, Lcom/itextpdf/text/pdf/fonts/cmaps/AbstractCMap;-><init>()V
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lcom/itextpdf/text/pdf/fonts/cmaps/CMapCidByte;->map:Ljava/util/HashMap;
+
+    const/4 v0, 0x0
+
+    new-array v0, v0, [B
+
+    iput-object v0, p0, Lcom/itextpdf/text/pdf/fonts/cmaps/CMapCidByte;->EMPTY:[B
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public addChar(Lcom/itextpdf/text/pdf/PdfString;Lcom/itextpdf/text/pdf/PdfObject;)V
+    .locals 1
+
+    instance-of v0, p2, Lcom/itextpdf/text/pdf/PdfNumber;
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    invoke-static {p1}, Lcom/itextpdf/text/pdf/fonts/cmaps/AbstractCMap;->decodeStringToByte(Lcom/itextpdf/text/pdf/PdfString;)[B
+
+    move-result-object p1
+
+    iget-object v0, p0, Lcom/itextpdf/text/pdf/fonts/cmaps/CMapCidByte;->map:Ljava/util/HashMap;
+
+    check-cast p2, Lcom/itextpdf/text/pdf/PdfNumber;
+
+    invoke-virtual {p2}, Lcom/itextpdf/text/pdf/PdfNumber;->intValue()I
+
+    move-result p2
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p2
+
+    invoke-virtual {v0, p2, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public lookup(I)[B
+    .locals 1
+
+    iget-object v0, p0, Lcom/itextpdf/text/pdf/fonts/cmaps/CMapCidByte;->map:Ljava/util/HashMap;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, [B
+
+    if-nez p1, :cond_0
+
+    iget-object p1, p0, Lcom/itextpdf/text/pdf/fonts/cmaps/CMapCidByte;->EMPTY:[B
+
+    :cond_0
+    return-object p1
+.end method

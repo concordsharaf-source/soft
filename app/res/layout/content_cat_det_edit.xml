@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ListView android:id="@id/list_cus_det_edit" android:layout_width="fill_parent" android:layout_height="wrap_content" android:drawSelectorOnTop="false" android:layout_below="@id/edit_cus_interface" />
+    <TextView android:textSize="18.0sp" android:textColor="#ff536fd2" android:textColorHighlight="#ffffffff" android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@id/emptyResults" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/empty_list" android:layout_below="@id/list_cus_det_edit" />
+</RelativeLayout>

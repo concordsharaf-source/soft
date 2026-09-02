@@ -1,0 +1,11 @@
+.class public interface abstract Lcom/itextpdf/text/pdf/interfaces/PdfEncryptionSettings;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# virtual methods
+.method public abstract setEncryption([B[BII)V
+.end method
+
+.method public abstract setEncryption([Ljava/security/cert/Certificate;[II)V
+.end method

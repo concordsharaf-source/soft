@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/linear_footer_bal3_" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="20.0dip" android:weightSum="100.0" android:layout_alignParentRight="true" android:layout_alignParentEnd="true">
+        <TextView android:textColor="@android:color/white" android:gravity="center" android:id="@id/footer_sum3" android:background="@color/gold" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="..." android:layout_weight="50.0" />
+        <TextView android:textColor="@android:color/white" android:gravity="center" android:id="@id/footer_sum2" android:background="@color/gold" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="..." android:layout_weight="50.0" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/linear_footer_bal4_" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="20.0dip" android:weightSum="100.0" android:layout_alignParentRight="true" android:layout_alignParentEnd="true">
+        <TextView android:textColor="@android:color/white" android:gravity="center" android:id="@id/footer_old_bal" android:background="@color/gold" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="" android:layout_weight="100.0" />
+    </LinearLayout>
+    <View android:id="@id/primerdivisor2_" android:background="@android:color/darker_gray" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="0.100000024dip" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:weightSum="105.0" android:layout_alignParentRight="true" android:layout_alignParentEnd="true">
+        <ImageView android:gravity="center_horizontal" android:id="@id/img_help" android:clickable="false" android:duplicateParentState="false" android:layout_width="0.0dip" android:layout_height="wrap_content" android:src="@drawable/whatsapp2" android:layout_weight="10.0" />
+        <ImageView android:gravity="center_horizontal" android:id="@id/img_call" android:clickable="false" android:duplicateParentState="false" android:layout_width="0.0dip" android:layout_height="wrap_content" android:src="@drawable/call2_" android:layout_weight="10.0" />
+        <TextView android:textSize="16.0dip" android:textColor="@android:color/white" android:gravity="center" android:id="@id/footer_sum" android:padding="2.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="" android:layout_weight="65.0" android:layout_below="@id/primerdivisor" />
+        <ImageView android:gravity="center_horizontal" android:id="@id/img_fwd_amount" android:clickable="false" android:duplicateParentState="false" android:layout_width="0.0dip" android:layout_height="wrap_content" android:src="@drawable/tran2_" android:layout_weight="10.0" />
+        <ImageView android:gravity="center_horizontal" android:id="@id/img_add_amount" android:clickable="false" android:duplicateParentState="false" android:layout_width="0.0dip" android:layout_height="wrap_content" android:src="@drawable/add2_" android:layout_weight="10.0" />
+    </LinearLayout>
+</LinearLayout>

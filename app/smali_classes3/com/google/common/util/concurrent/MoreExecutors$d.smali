@@ -1,0 +1,56 @@
+.class public Lcom/google/common/util/concurrent/MoreExecutors$d;
+.super LUZ;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/google/common/util/concurrent/MoreExecutors;->renamingDecorator(Ljava/util/concurrent/ScheduledExecutorService;Lcom/google/common/base/Supplier;)Ljava/util/concurrent/ScheduledExecutorService;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+
+# instance fields
+.field public final synthetic c:Lcom/google/common/base/Supplier;
+
+
+# direct methods
+.method public constructor <init>(Ljava/util/concurrent/ScheduledExecutorService;Lcom/google/common/base/Supplier;)V
+    .locals 0
+
+    iput-object p2, p0, Lcom/google/common/util/concurrent/MoreExecutors$d;->c:Lcom/google/common/base/Supplier;
+
+    invoke-direct {p0, p1}, LUZ;-><init>(Ljava/util/concurrent/ScheduledExecutorService;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public a(Ljava/lang/Runnable;)Ljava/lang/Runnable;
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/common/util/concurrent/MoreExecutors$d;->c:Lcom/google/common/base/Supplier;
+
+    invoke-static {p1, v0}, Lcom/google/common/util/concurrent/Callables;->threadRenaming(Ljava/lang/Runnable;Lcom/google/common/base/Supplier;)Ljava/lang/Runnable;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public b(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Callable;
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/common/util/concurrent/MoreExecutors$d;->c:Lcom/google/common/base/Supplier;
+
+    invoke-static {p1, v0}, Lcom/google/common/util/concurrent/Callables;->threadRenaming(Ljava/util/concurrent/Callable;Lcom/google/common/base/Supplier;)Ljava/util/concurrent/Callable;
+
+    move-result-object p1
+
+    return-object p1
+.end method

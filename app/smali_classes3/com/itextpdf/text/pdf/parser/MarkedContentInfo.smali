@@ -1,0 +1,86 @@
+.class public Lcom/itextpdf/text/pdf/parser/MarkedContentInfo;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# instance fields
+.field private final dictionary:Lcom/itextpdf/text/pdf/PdfDictionary;
+
+.field private final tag:Lcom/itextpdf/text/pdf/PdfName;
+
+
+# direct methods
+.method public constructor <init>(Lcom/itextpdf/text/pdf/PdfName;Lcom/itextpdf/text/pdf/PdfDictionary;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/itextpdf/text/pdf/parser/MarkedContentInfo;->tag:Lcom/itextpdf/text/pdf/PdfName;
+
+    if-eqz p2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p2, Lcom/itextpdf/text/pdf/PdfDictionary;
+
+    invoke-direct {p2}, Lcom/itextpdf/text/pdf/PdfDictionary;-><init>()V
+
+    :goto_0
+    iput-object p2, p0, Lcom/itextpdf/text/pdf/parser/MarkedContentInfo;->dictionary:Lcom/itextpdf/text/pdf/PdfDictionary;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public getMcid()I
+    .locals 2
+
+    iget-object v0, p0, Lcom/itextpdf/text/pdf/parser/MarkedContentInfo;->dictionary:Lcom/itextpdf/text/pdf/PdfDictionary;
+
+    sget-object v1, Lcom/itextpdf/text/pdf/PdfName;->MCID:Lcom/itextpdf/text/pdf/PdfName;
+
+    invoke-virtual {v0, v1}, Lcom/itextpdf/text/pdf/PdfDictionary;->getAsNumber(Lcom/itextpdf/text/pdf/PdfName;)Lcom/itextpdf/text/pdf/PdfNumber;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Lcom/itextpdf/text/pdf/PdfNumber;->intValue()I
+
+    move-result v0
+
+    return v0
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "MarkedContentInfo does not contain MCID"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public getTag()Lcom/itextpdf/text/pdf/PdfName;
+    .locals 1
+
+    iget-object v0, p0, Lcom/itextpdf/text/pdf/parser/MarkedContentInfo;->tag:Lcom/itextpdf/text/pdf/PdfName;
+
+    return-object v0
+.end method
+
+.method public hasMcid()Z
+    .locals 2
+
+    iget-object v0, p0, Lcom/itextpdf/text/pdf/parser/MarkedContentInfo;->dictionary:Lcom/itextpdf/text/pdf/PdfDictionary;
+
+    sget-object v1, Lcom/itextpdf/text/pdf/PdfName;->MCID:Lcom/itextpdf/text/pdf/PdfName;
+
+    invoke-virtual {v0, v1}, Lcom/itextpdf/text/pdf/PdfDictionary;->contains(Lcom/itextpdf/text/pdf/PdfName;)Z
+
+    move-result v0
+
+    return v0
+.end method

@@ -1,0 +1,8 @@
+.class public interface abstract Lcom/itextpdf/text/pdf/security/ExternalDigest;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# virtual methods
+.method public abstract getMessageDigest(Ljava/lang/String;)Ljava/security/MessageDigest;
+.end method

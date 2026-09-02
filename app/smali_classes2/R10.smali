@@ -1,0 +1,34 @@
+.class public final LR10;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic a:Lcom/google/android/gms/common/api/internal/zabq;
+
+
+# direct methods
+.method public constructor <init>(Lcom/google/android/gms/common/api/internal/zabq;)V
+    .locals 0
+
+    iput-object p1, p0, LR10;->a:Lcom/google/android/gms/common/api/internal/zabq;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
+    .locals 1
+
+    iget-object v0, p0, LR10;->a:Lcom/google/android/gms/common/api/internal/zabq;
+
+    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/zabq;->zaj(Lcom/google/android/gms/common/api/internal/zabq;)V
+
+    return-void
+.end method

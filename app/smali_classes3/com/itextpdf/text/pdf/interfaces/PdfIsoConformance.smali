@@ -1,0 +1,11 @@
+.class public interface abstract Lcom/itextpdf/text/pdf/interfaces/PdfIsoConformance;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# virtual methods
+.method public abstract checkPdfIsoConformance(ILjava/lang/Object;)V
+.end method
+
+.method public abstract isPdfIso()Z
+.end method

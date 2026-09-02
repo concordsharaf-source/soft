@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="right" android:orientation="vertical" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TableLayout android:id="@id/bill_det" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TableRow android:gravity="right" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <include android:id="@id/report_hdr" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" layout="@layout/content_report_input2" />
+        </TableRow>
+        <View android:id="@id/primerdivisor4" android:background="@android:color/darker_gray" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+        <TableRow android:gravity="right" android:background="@color/gold2" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <include android:id="@id/report_hdr" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" layout="@layout/data_det_row2_hdr" />
+        </TableRow>
+        <View android:id="@id/primerdivisor3" android:background="@android:color/darker_gray" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+        <TableRow android:gravity="right" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ListView android:gravity="right" android:id="@id/list_items" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        </TableRow>
+        <TextView android:textSize="18.0sp" android:textColor="#ff536fd2" android:textColorHighlight="#ffffffff" android:gravity="center_horizontal" android:id="@id/emptyResults" android:background="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/empty_results" android:onClick="btn_add" />
+    </TableLayout>
+    <View android:id="@id/primerdivisor2" android:background="@android:color/darker_gray" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+</LinearLayout>

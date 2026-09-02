@@ -1,0 +1,14 @@
+.class public interface abstract Lcom/itextpdf/text/pdf/interfaces/PdfPageActions;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# virtual methods
+.method public abstract setDuration(I)V
+.end method
+
+.method public abstract setPageAction(Lcom/itextpdf/text/pdf/PdfName;Lcom/itextpdf/text/pdf/PdfAction;)V
+.end method
+
+.method public abstract setTransition(Lcom/itextpdf/text/pdf/PdfTransition;)V
+.end method

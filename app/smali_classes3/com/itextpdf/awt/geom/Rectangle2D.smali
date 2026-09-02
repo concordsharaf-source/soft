@@ -1,0 +1,783 @@
+.class public abstract Lcom/itextpdf/awt/geom/Rectangle2D;
+.super Lcom/itextpdf/awt/geom/RectangularShape;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/itextpdf/awt/geom/Rectangle2D$Iterator;,
+        Lcom/itextpdf/awt/geom/Rectangle2D$Double;,
+        Lcom/itextpdf/awt/geom/Rectangle2D$Float;
+    }
+.end annotation
+
+
+# static fields
+.field public static final OUT_BOTTOM:I = 0x8
+
+.field public static final OUT_LEFT:I = 0x1
+
+.field public static final OUT_RIGHT:I = 0x4
+
+.field public static final OUT_TOP:I = 0x2
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/itextpdf/awt/geom/RectangularShape;-><init>()V
+
+    return-void
+.end method
+
+.method public static intersect(Lcom/itextpdf/awt/geom/Rectangle2D;Lcom/itextpdf/awt/geom/Rectangle2D;Lcom/itextpdf/awt/geom/Rectangle2D;)V
+    .locals 13
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getMinX()D
+
+    move-result-wide v0
+
+    invoke-virtual {p1}, Lcom/itextpdf/awt/geom/RectangularShape;->getMinX()D
+
+    move-result-wide v2
+
+    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->max(DD)D
+
+    move-result-wide v5
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getMinY()D
+
+    move-result-wide v0
+
+    invoke-virtual {p1}, Lcom/itextpdf/awt/geom/RectangularShape;->getMinY()D
+
+    move-result-wide v2
+
+    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->max(DD)D
+
+    move-result-wide v7
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getMaxX()D
+
+    move-result-wide v0
+
+    invoke-virtual {p1}, Lcom/itextpdf/awt/geom/RectangularShape;->getMaxX()D
+
+    move-result-wide v2
+
+    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->min(DD)D
+
+    move-result-wide v0
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getMaxY()D
+
+    move-result-wide v2
+
+    invoke-virtual {p1}, Lcom/itextpdf/awt/geom/RectangularShape;->getMaxY()D
+
+    move-result-wide p0
+
+    invoke-static {v2, v3, p0, p1}, Ljava/lang/Math;->min(DD)D
+
+    move-result-wide p0
+
+    sub-double v9, v0, v5
+
+    sub-double v11, p0, v7
+
+    move-object v4, p2
+
+    invoke-virtual/range {v4 .. v12}, Lcom/itextpdf/awt/geom/Rectangle2D;->setFrame(DDDD)V
+
+    return-void
+.end method
+
+.method public static union(Lcom/itextpdf/awt/geom/Rectangle2D;Lcom/itextpdf/awt/geom/Rectangle2D;Lcom/itextpdf/awt/geom/Rectangle2D;)V
+    .locals 13
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getMinX()D
+
+    move-result-wide v0
+
+    invoke-virtual {p1}, Lcom/itextpdf/awt/geom/RectangularShape;->getMinX()D
+
+    move-result-wide v2
+
+    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->min(DD)D
+
+    move-result-wide v5
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getMinY()D
+
+    move-result-wide v0
+
+    invoke-virtual {p1}, Lcom/itextpdf/awt/geom/RectangularShape;->getMinY()D
+
+    move-result-wide v2
+
+    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->min(DD)D
+
+    move-result-wide v7
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getMaxX()D
+
+    move-result-wide v0
+
+    invoke-virtual {p1}, Lcom/itextpdf/awt/geom/RectangularShape;->getMaxX()D
+
+    move-result-wide v2
+
+    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->max(DD)D
+
+    move-result-wide v0
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getMaxY()D
+
+    move-result-wide v2
+
+    invoke-virtual {p1}, Lcom/itextpdf/awt/geom/RectangularShape;->getMaxY()D
+
+    move-result-wide p0
+
+    invoke-static {v2, v3, p0, p1}, Ljava/lang/Math;->max(DD)D
+
+    move-result-wide p0
+
+    sub-double v9, v0, v5
+
+    sub-double v11, p0, v7
+
+    move-object v4, p2
+
+    invoke-virtual/range {v4 .. v12}, Lcom/itextpdf/awt/geom/Rectangle2D;->setFrame(DDDD)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public add(DD)V
+    .locals 11
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getMinX()D
+
+    move-result-wide v0
+
+    invoke-static {v0, v1, p1, p2}, Ljava/lang/Math;->min(DD)D
+
+    move-result-wide v3
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getMinY()D
+
+    move-result-wide v0
+
+    invoke-static {v0, v1, p3, p4}, Ljava/lang/Math;->min(DD)D
+
+    move-result-wide v5
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getMaxX()D
+
+    move-result-wide v0
+
+    invoke-static {v0, v1, p1, p2}, Ljava/lang/Math;->max(DD)D
+
+    move-result-wide p1
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getMaxY()D
+
+    move-result-wide v0
+
+    invoke-static {v0, v1, p3, p4}, Ljava/lang/Math;->max(DD)D
+
+    move-result-wide p3
+
+    sub-double v7, p1, v3
+
+    sub-double v9, p3, v5
+
+    move-object v2, p0
+
+    invoke-virtual/range {v2 .. v10}, Lcom/itextpdf/awt/geom/Rectangle2D;->setRect(DDDD)V
+
+    return-void
+.end method
+
+.method public add(Lcom/itextpdf/awt/geom/Point2D;)V
+    .locals 4
+
+    invoke-virtual {p1}, Lcom/itextpdf/awt/geom/Point2D;->getX()D
+
+    move-result-wide v0
+
+    invoke-virtual {p1}, Lcom/itextpdf/awt/geom/Point2D;->getY()D
+
+    move-result-wide v2
+
+    invoke-virtual {p0, v0, v1, v2, v3}, Lcom/itextpdf/awt/geom/Rectangle2D;->add(DD)V
+
+    return-void
+.end method
+
+.method public add(Lcom/itextpdf/awt/geom/Rectangle2D;)V
+    .locals 0
+
+    invoke-static {p0, p1, p0}, Lcom/itextpdf/awt/geom/Rectangle2D;->union(Lcom/itextpdf/awt/geom/Rectangle2D;Lcom/itextpdf/awt/geom/Rectangle2D;Lcom/itextpdf/awt/geom/Rectangle2D;)V
+
+    return-void
+.end method
+
+.method public contains(DD)Z
+    .locals 10
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->isEmpty()Z
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    return v1
+
+    :cond_0
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getX()D
+
+    move-result-wide v2
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getY()D
+
+    move-result-wide v4
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getWidth()D
+
+    move-result-wide v6
+
+    add-double/2addr v6, v2
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getHeight()D
+
+    move-result-wide v8
+
+    add-double/2addr v8, v4
+
+    cmpg-double v0, v2, p1
+
+    if-gtz v0, :cond_1
+
+    cmpg-double v0, p1, v6
+
+    if-gez v0, :cond_1
+
+    cmpg-double p1, v4, p3
+
+    if-gtz p1, :cond_1
+
+    cmpg-double p1, p3, v8
+
+    if-gez p1, :cond_1
+
+    const/4 v1, 0x1
+
+    :cond_1
+    return v1
+.end method
+
+.method public contains(DDDD)Z
+    .locals 10
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->isEmpty()Z
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_1
+
+    const-wide/16 v2, 0x0
+
+    cmpg-double v0, p5, v2
+
+    if-lez v0, :cond_1
+
+    cmpg-double v0, p7, v2
+
+    if-gtz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getX()D
+
+    move-result-wide v2
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getY()D
+
+    move-result-wide v4
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getWidth()D
+
+    move-result-wide v6
+
+    add-double/2addr v6, v2
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getHeight()D
+
+    move-result-wide v8
+
+    add-double/2addr v8, v4
+
+    cmpg-double v0, v2, p1
+
+    if-gtz v0, :cond_1
+
+    add-double v2, p1, p5
+
+    cmpg-double v0, v2, v6
+
+    if-gtz v0, :cond_1
+
+    cmpg-double v0, v4, p3
+
+    if-gtz v0, :cond_1
+
+    add-double v2, p3, p7
+
+    cmpg-double v0, v2, v8
+
+    if-gtz v0, :cond_1
+
+    const/4 v1, 0x1
+
+    :cond_1
+    :goto_0
+    return v1
+.end method
+
+.method public abstract createIntersection(Lcom/itextpdf/awt/geom/Rectangle2D;)Lcom/itextpdf/awt/geom/Rectangle2D;
+.end method
+
+.method public abstract createUnion(Lcom/itextpdf/awt/geom/Rectangle2D;)Lcom/itextpdf/awt/geom/Rectangle2D;
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+    .locals 7
+
+    const/4 v0, 0x1
+
+    if-ne p1, p0, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lcom/itextpdf/awt/geom/Rectangle2D;
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_2
+
+    check-cast p1, Lcom/itextpdf/awt/geom/Rectangle2D;
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getX()D
+
+    move-result-wide v3
+
+    invoke-virtual {p1}, Lcom/itextpdf/awt/geom/RectangularShape;->getX()D
+
+    move-result-wide v5
+
+    cmpl-double v1, v3, v5
+
+    if-nez v1, :cond_1
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getY()D
+
+    move-result-wide v3
+
+    invoke-virtual {p1}, Lcom/itextpdf/awt/geom/RectangularShape;->getY()D
+
+    move-result-wide v5
+
+    cmpl-double v1, v3, v5
+
+    if-nez v1, :cond_1
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getWidth()D
+
+    move-result-wide v3
+
+    invoke-virtual {p1}, Lcom/itextpdf/awt/geom/RectangularShape;->getWidth()D
+
+    move-result-wide v5
+
+    cmpl-double v1, v3, v5
+
+    if-nez v1, :cond_1
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getHeight()D
+
+    move-result-wide v3
+
+    invoke-virtual {p1}, Lcom/itextpdf/awt/geom/RectangularShape;->getHeight()D
+
+    move-result-wide v5
+
+    cmpl-double p1, v3, v5
+
+    if-nez p1, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+
+    :cond_2
+    return v2
+.end method
+
+.method public getBounds2D()Lcom/itextpdf/awt/geom/Rectangle2D;
+    .locals 1
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/itextpdf/awt/geom/Rectangle2D;
+
+    return-object v0
+.end method
+
+.method public getPathIterator(Lcom/itextpdf/awt/geom/AffineTransform;)Lcom/itextpdf/awt/geom/PathIterator;
+    .locals 1
+
+    new-instance v0, Lcom/itextpdf/awt/geom/Rectangle2D$Iterator;
+
+    invoke-direct {v0, p0, p0, p1}, Lcom/itextpdf/awt/geom/Rectangle2D$Iterator;-><init>(Lcom/itextpdf/awt/geom/Rectangle2D;Lcom/itextpdf/awt/geom/Rectangle2D;Lcom/itextpdf/awt/geom/AffineTransform;)V
+
+    return-object v0
+.end method
+
+.method public getPathIterator(Lcom/itextpdf/awt/geom/AffineTransform;D)Lcom/itextpdf/awt/geom/PathIterator;
+    .locals 0
+
+    new-instance p2, Lcom/itextpdf/awt/geom/Rectangle2D$Iterator;
+
+    invoke-direct {p2, p0, p0, p1}, Lcom/itextpdf/awt/geom/Rectangle2D$Iterator;-><init>(Lcom/itextpdf/awt/geom/Rectangle2D;Lcom/itextpdf/awt/geom/Rectangle2D;Lcom/itextpdf/awt/geom/AffineTransform;)V
+
+    return-object p2
+.end method
+
+.method public hashCode()I
+    .locals 3
+
+    new-instance v0, Lcom/itextpdf/awt/geom/misc/HashCode;
+
+    invoke-direct {v0}, Lcom/itextpdf/awt/geom/misc/HashCode;-><init>()V
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getX()D
+
+    move-result-wide v1
+
+    invoke-virtual {v0, v1, v2}, Lcom/itextpdf/awt/geom/misc/HashCode;->append(D)Lcom/itextpdf/awt/geom/misc/HashCode;
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getY()D
+
+    move-result-wide v1
+
+    invoke-virtual {v0, v1, v2}, Lcom/itextpdf/awt/geom/misc/HashCode;->append(D)Lcom/itextpdf/awt/geom/misc/HashCode;
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getWidth()D
+
+    move-result-wide v1
+
+    invoke-virtual {v0, v1, v2}, Lcom/itextpdf/awt/geom/misc/HashCode;->append(D)Lcom/itextpdf/awt/geom/misc/HashCode;
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getHeight()D
+
+    move-result-wide v1
+
+    invoke-virtual {v0, v1, v2}, Lcom/itextpdf/awt/geom/misc/HashCode;->append(D)Lcom/itextpdf/awt/geom/misc/HashCode;
+
+    invoke-virtual {v0}, Lcom/itextpdf/awt/geom/misc/HashCode;->hashCode()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public intersects(DDDD)Z
+    .locals 12
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->isEmpty()Z
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_1
+
+    const-wide/16 v2, 0x0
+
+    cmpg-double v0, p5, v2
+
+    if-lez v0, :cond_1
+
+    cmpg-double v0, p7, v2
+
+    if-gtz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getX()D
+
+    move-result-wide v2
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getY()D
+
+    move-result-wide v4
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getWidth()D
+
+    move-result-wide v6
+
+    add-double/2addr v6, v2
+
+    invoke-virtual {p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getHeight()D
+
+    move-result-wide v8
+
+    add-double/2addr v8, v4
+
+    add-double v10, p1, p5
+
+    cmpl-double v0, v10, v2
+
+    if-lez v0, :cond_1
+
+    cmpg-double v0, p1, v6
+
+    if-gez v0, :cond_1
+
+    add-double v2, p3, p7
+
+    cmpl-double v0, v2, v4
+
+    if-lez v0, :cond_1
+
+    cmpg-double v0, p3, v8
+
+    if-gez v0, :cond_1
+
+    const/4 v1, 0x1
+
+    :cond_1
+    :goto_0
+    return v1
+.end method
+
+.method public intersectsLine(DDDD)Z
+    .locals 24
+
+    invoke-virtual/range {p0 .. p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getX()D
+
+    move-result-wide v16
+
+    invoke-virtual/range {p0 .. p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getY()D
+
+    move-result-wide v18
+
+    invoke-virtual/range {p0 .. p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getWidth()D
+
+    move-result-wide v0
+
+    add-double v20, v16, v0
+
+    invoke-virtual/range {p0 .. p0}, Lcom/itextpdf/awt/geom/RectangularShape;->getHeight()D
+
+    move-result-wide v0
+
+    add-double v22, v18, v0
+
+    cmpg-double v0, v16, p1
+
+    if-gtz v0, :cond_0
+
+    cmpg-double v0, p1, v20
+
+    if-gtz v0, :cond_0
+
+    cmpg-double v0, v18, p3
+
+    if-gtz v0, :cond_0
+
+    cmpg-double v0, p3, v22
+
+    if-lez v0, :cond_3
+
+    :cond_0
+    cmpg-double v0, v16, p5
+
+    if-gtz v0, :cond_1
+
+    cmpg-double v0, p5, v20
+
+    if-gtz v0, :cond_1
+
+    cmpg-double v0, v18, p7
+
+    if-gtz v0, :cond_1
+
+    cmpg-double v0, p7, v22
+
+    if-lez v0, :cond_3
+
+    :cond_1
+    move-wide/from16 v0, v16
+
+    move-wide/from16 v2, v18
+
+    move-wide/from16 v4, v20
+
+    move-wide/from16 v6, v22
+
+    move-wide/from16 v8, p1
+
+    move-wide/from16 v10, p3
+
+    move-wide/from16 v12, p5
+
+    move-wide/from16 v14, p7
+
+    invoke-static/range {v0 .. v15}, Lcom/itextpdf/awt/geom/Line2D;->linesIntersect(DDDDDDDD)Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    move-wide/from16 v0, v20
+
+    move-wide/from16 v2, v18
+
+    move-wide/from16 v4, v16
+
+    move-wide/from16 v6, v22
+
+    move-wide/from16 v8, p1
+
+    move-wide/from16 v10, p3
+
+    move-wide/from16 v12, p5
+
+    move-wide/from16 v14, p7
+
+    invoke-static/range {v0 .. v15}, Lcom/itextpdf/awt/geom/Line2D;->linesIntersect(DDDDDDDD)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    const/4 v0, 0x0
+
+    goto :goto_1
+
+    :cond_3
+    :goto_0
+    const/4 v0, 0x1
+
+    :goto_1
+    return v0
+.end method
+
+.method public intersectsLine(Lcom/itextpdf/awt/geom/Line2D;)Z
+    .locals 9
+
+    invoke-virtual {p1}, Lcom/itextpdf/awt/geom/Line2D;->getX1()D
+
+    move-result-wide v1
+
+    invoke-virtual {p1}, Lcom/itextpdf/awt/geom/Line2D;->getY1()D
+
+    move-result-wide v3
+
+    invoke-virtual {p1}, Lcom/itextpdf/awt/geom/Line2D;->getX2()D
+
+    move-result-wide v5
+
+    invoke-virtual {p1}, Lcom/itextpdf/awt/geom/Line2D;->getY2()D
+
+    move-result-wide v7
+
+    move-object v0, p0
+
+    invoke-virtual/range {v0 .. v8}, Lcom/itextpdf/awt/geom/Rectangle2D;->intersectsLine(DDDD)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public abstract outcode(DD)I
+.end method
+
+.method public outcode(Lcom/itextpdf/awt/geom/Point2D;)I
+    .locals 4
+
+    invoke-virtual {p1}, Lcom/itextpdf/awt/geom/Point2D;->getX()D
+
+    move-result-wide v0
+
+    invoke-virtual {p1}, Lcom/itextpdf/awt/geom/Point2D;->getY()D
+
+    move-result-wide v2
+
+    invoke-virtual {p0, v0, v1, v2, v3}, Lcom/itextpdf/awt/geom/Rectangle2D;->outcode(DD)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public setFrame(DDDD)V
+    .locals 0
+
+    invoke-virtual/range {p0 .. p8}, Lcom/itextpdf/awt/geom/Rectangle2D;->setRect(DDDD)V
+
+    return-void
+.end method
+
+.method public abstract setRect(DDDD)V
+.end method
+
+.method public setRect(Lcom/itextpdf/awt/geom/Rectangle2D;)V
+    .locals 9
+
+    invoke-virtual {p1}, Lcom/itextpdf/awt/geom/RectangularShape;->getX()D
+
+    move-result-wide v1
+
+    invoke-virtual {p1}, Lcom/itextpdf/awt/geom/RectangularShape;->getY()D
+
+    move-result-wide v3
+
+    invoke-virtual {p1}, Lcom/itextpdf/awt/geom/RectangularShape;->getWidth()D
+
+    move-result-wide v5
+
+    invoke-virtual {p1}, Lcom/itextpdf/awt/geom/RectangularShape;->getHeight()D
+
+    move-result-wide v7
+
+    move-object v0, p0
+
+    invoke-virtual/range {v0 .. v8}, Lcom/itextpdf/awt/geom/Rectangle2D;->setRect(DDDD)V
+
+    return-void
+.end method

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preference-headers
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <header android:icon="@drawable/s_info" android:title="@string/pref_header_general" android:fragment="info.aalmoghalis.inventorz.activity.SettingsActivity$GeneralPreferenceFragment" />
+    <header android:icon="@drawable/s_print_option" android:title="@string/pref_header_data_sync" android:fragment="info.aalmoghalis.inventorz.activity.SettingsActivity$DataSyncPreferenceFragment" />
+    <header android:icon="@drawable/s_security_option" android:title="@string/pref_security" android:fragment="info.aalmoghalis.inventorz.activity.SettingsActivity$SecurityPreferenceFragment" />
+    <header android:icon="@drawable/s_groups" android:title="@string/pref_group_curr">
+        <intent android:targetPackage="info.aalmoghalis.inventorz" android:action="android.intent.action.VIEW" android:targetClass="info.aalmoghalis.inventorz.old.GroupList_edit" />
+    </header>
+    <header android:icon="@drawable/s_save_option" android:title="@string/pref_backup" android:fragment="info.aalmoghalis.inventorz.activity.SettingsActivity$BackupPreferenceFragment" /> /> <header android:icon="@drawable/s_print_option" android:title="@string/pref_thermal_options" android:fragment="info.aalmoghalis.inventorz.activity.SettingsActivity$ThermalPreferenceFragment" />
+    <header android:icon="@drawable/s_ther_remarks" android:title="@string/pref_SMS_WA_options" android:fragment="info.aalmoghalis.inventorz.activity.SettingsActivity$SMS_WA_PreferenceFragment" /> /> <header android:icon="@drawable/s_other_option" android:title="@string/pref_other_options" android:fragment="info.aalmoghalis.inventorz.activity.SettingsActivity$OthersPreferenceFragment" /> /> </preference-headers>

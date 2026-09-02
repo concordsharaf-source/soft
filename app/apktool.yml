@@ -1,0 +1,122 @@
+!!brut.androlib.meta.MetaInfo
+apkFileName: شرفسوفت.apk
+compressionType: false
+doNotCompress:
+- resources.arsc
+- png
+- assets/dexopt/baseline.prof
+- assets/dexopt/baseline.profm
+- webp
+- ogg
+- jpg
+- res/raw/com_android_billingclient_heterodyne_info
+- jpeg
+- res/raw/com_android_billingclient_registration_info.binarypb
+- mp3
+isFrameworkApk: false
+packageInfo:
+  forcedPackageId: '127'
+  renameManifestPackage: null
+sdkInfo:
+  minSdkVersion: 21
+  targetSdkVersion: 35
+sharedLibrary: false
+sparseResources: false
+unknownFiles:
+  DebugProbesKt.bin: '8'
+  androidsupportmultidexversion.txt: '8'
+  billing.properties: '8'
+  default.css: '8'
+  firebase-common.properties: '8'
+  firebase-components.properties: '8'
+  firebase-datatransport.properties: '8'
+  firebase-encoders-json.properties: '8'
+  firebase-encoders-proto.properties: '8'
+  firebase-encoders.properties: '8'
+  firebase-iid-interop.properties: '8'
+  firebase-iid.properties: '8'
+  firebase-installations-interop.properties: '8'
+  firebase-installations.properties: '8'
+  firebase-measurement-connector.properties: '8'
+  firebase-messaging.properties: '8'
+  font_metrics.properties: '8'
+  kotlin-tooling-metadata.json: '8'
+  play-services-auth-api-phone.properties: '8'
+  play-services-auth-base.properties: '8'
+  play-services-auth.properties: '8'
+  play-services-base.properties: '8'
+  play-services-basement.properties: '8'
+  play-services-clearcut.properties: '8'
+  play-services-fido.properties: '8'
+  play-services-flags.properties: '8'
+  play-services-location.properties: '8'
+  play-services-phenotype.properties: '8'
+  play-services-places-placereport.properties: '8'
+  play-services-stats.properties: '8'
+  play-services-tasks.properties: '8'
+  play-services-vision-common.properties: '8'
+  play-services-vision.properties: '8'
+  projectinfo.properties: '8'
+  transport-api.properties: '8'
+  transport-backend-cct.properties: '8'
+  transport-runtime.properties: '8'
+  com/fasterxml/jackson/core/json/VERSION.txt: '8'
+  com/google/api/client/googleapis/google.jks: '8'
+  com/itextpdf/text/AGPL.txt: '8'
+  com/itextpdf/text/LICENSE.txt: '8'
+  com/itextpdf/text/NOTICE.txt: '8'
+  com/itextpdf/text/l10n/error/en.lng: '8'
+  com/itextpdf/text/l10n/error/nl.lng: '8'
+  com/itextpdf/text/l10n/error/pt.lng: '8'
+  com/itextpdf/text/pdf/fonts/Courier-Bold.afm: '8'
+  com/itextpdf/text/pdf/fonts/Courier-BoldOblique.afm: '8'
+  com/itextpdf/text/pdf/fonts/Courier-Oblique.afm: '8'
+  com/itextpdf/text/pdf/fonts/Courier.afm: '8'
+  com/itextpdf/text/pdf/fonts/Helvetica-Bold.afm: '8'
+  com/itextpdf/text/pdf/fonts/Helvetica-BoldOblique.afm: '8'
+  com/itextpdf/text/pdf/fonts/Helvetica-Oblique.afm: '8'
+  com/itextpdf/text/pdf/fonts/Helvetica.afm: '8'
+  com/itextpdf/text/pdf/fonts/Symbol.afm: '8'
+  com/itextpdf/text/pdf/fonts/Times-Bold.afm: '8'
+  com/itextpdf/text/pdf/fonts/Times-BoldItalic.afm: '8'
+  com/itextpdf/text/pdf/fonts/Times-Italic.afm: '8'
+  com/itextpdf/text/pdf/fonts/Times-Roman.afm: '8'
+  com/itextpdf/text/pdf/fonts/ZapfDingbats.afm: '8'
+  com/itextpdf/text/pdf/fonts/cmap_info.txt: '8'
+  com/itextpdf/text/pdf/fonts/glyphlist.txt: '8'
+  com/itextpdf/text/pdf/fonts/mustRead.html: '8'
+  com/sun/pdfview/decode/CCITTCodes: '8'
+  com/sun/pdfview/font/res/BaseFonts.properties: '8'
+  com/sun/pdfview/font/res/d050000l.pfb: '8'
+  com/sun/pdfview/font/res/n019003l.pfb: '8'
+  com/sun/pdfview/font/res/n019004l.pfb: '8'
+  com/sun/pdfview/font/res/n019023l.pfb: '8'
+  com/sun/pdfview/font/res/n019024l.pfb: '8'
+  com/sun/pdfview/font/res/n021003l.pfb: '8'
+  com/sun/pdfview/font/res/n021004l.pfb: '8'
+  com/sun/pdfview/font/res/n021023l.pfb: '8'
+  com/sun/pdfview/font/res/n021024l.pfb: '8'
+  com/sun/pdfview/font/res/n022003l.pfb: '8'
+  com/sun/pdfview/font/res/n022004l.pfb: '8'
+  com/sun/pdfview/font/res/n022023l.pfb: '8'
+  com/sun/pdfview/font/res/n022024l.pfb: '8'
+  com/sun/pdfview/font/res/s050000l.pfb: '8'
+  com/sun/pdfview/font/ttf/resource/glyphlist.txt: '8'
+  com/zebra/sdk/settings/internal/epoch.json: '8'
+  com/zebra/sdk/settings/internal/legacyMobile.json: '8'
+  com/zebra/sdk/settings/internal/legacyTableTop.json: '8'
+  errors/errors.properties: '8'
+  errors/errors_en.properties: '8'
+  errors/errors_nl.properties: '8'
+  okhttp3/internal/publicsuffix/NOTICE: '8'
+  okhttp3/internal/publicsuffix/publicsuffixes.gz: '8'
+  org/apache/poi/hssf/record/formula/function/functionMetadata-asGenerated.txt: '8'
+  org/apache/poi/hssf/record/formula/function/functionMetadata.txt: '8'
+usesFramework:
+  ids:
+  - 1
+  tag: null
+version: 2.7.0-dirty
+versionInfo:
+  versionCode: 170
+  versionName: 'Inv1.170'

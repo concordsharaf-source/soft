@@ -1,0 +1,119 @@
+.class public Lcom/itextpdf/text/pdf/GrayColor;
+.super Lcom/itextpdf/text/pdf/ExtendedColor;
+.source "SourceFile"
+
+
+# static fields
+.field public static final GRAYBLACK:Lcom/itextpdf/text/pdf/GrayColor;
+
+.field public static final GRAYWHITE:Lcom/itextpdf/text/pdf/GrayColor;
+
+.field private static final serialVersionUID:J = -0x5b33d9bb8d78833aL
+
+
+# instance fields
+.field private gray:F
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lcom/itextpdf/text/pdf/GrayColor;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lcom/itextpdf/text/pdf/GrayColor;-><init>(F)V
+
+    sput-object v0, Lcom/itextpdf/text/pdf/GrayColor;->GRAYBLACK:Lcom/itextpdf/text/pdf/GrayColor;
+
+    new-instance v0, Lcom/itextpdf/text/pdf/GrayColor;
+
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    invoke-direct {v0, v1}, Lcom/itextpdf/text/pdf/GrayColor;-><init>(F)V
+
+    sput-object v0, Lcom/itextpdf/text/pdf/GrayColor;->GRAYWHITE:Lcom/itextpdf/text/pdf/GrayColor;
+
+    return-void
+.end method
+
+.method public constructor <init>(F)V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    invoke-direct {p0, v0, p1, p1, p1}, Lcom/itextpdf/text/pdf/ExtendedColor;-><init>(IFFF)V
+
+    invoke-static {p1}, Lcom/itextpdf/text/pdf/ExtendedColor;->normalize(F)F
+
+    move-result p1
+
+    iput p1, p0, Lcom/itextpdf/text/pdf/GrayColor;->gray:F
+
+    return-void
+.end method
+
+.method public constructor <init>(I)V
+    .locals 1
+
+    int-to-float p1, p1
+
+    const/high16 v0, 0x437f0000    # 255.0f
+
+    div-float/2addr p1, v0
+
+    invoke-direct {p0, p1}, Lcom/itextpdf/text/pdf/GrayColor;-><init>(F)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    instance-of v0, p1, Lcom/itextpdf/text/pdf/GrayColor;
+
+    if-eqz v0, :cond_0
+
+    check-cast p1, Lcom/itextpdf/text/pdf/GrayColor;
+
+    iget p1, p1, Lcom/itextpdf/text/pdf/GrayColor;->gray:F
+
+    iget v0, p0, Lcom/itextpdf/text/pdf/GrayColor;->gray:F
+
+    cmpl-float p1, p1, v0
+
+    if-nez p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
+.end method
+
+.method public getGray()F
+    .locals 1
+
+    iget v0, p0, Lcom/itextpdf/text/pdf/GrayColor;->gray:F
+
+    return v0
+.end method
+
+.method public hashCode()I
+    .locals 1
+
+    iget v0, p0, Lcom/itextpdf/text/pdf/GrayColor;->gray:F
+
+    invoke-static {v0}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v0
+
+    return v0
+.end method

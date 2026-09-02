@@ -1,0 +1,11 @@
+.class public interface abstract Lcom/itextpdf/text/pdf/languages/LanguageProcessor;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# virtual methods
+.method public abstract isRTL()Z
+.end method
+
+.method public abstract process(Ljava/lang/String;)Ljava/lang/String;
+.end method

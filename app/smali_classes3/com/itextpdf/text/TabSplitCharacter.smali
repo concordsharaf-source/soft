@@ -1,0 +1,42 @@
+.class public Lcom/itextpdf/text/TabSplitCharacter;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lcom/itextpdf/text/SplitCharacter;
+
+
+# static fields
+.field public static final TAB:Lcom/itextpdf/text/SplitCharacter;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lcom/itextpdf/text/TabSplitCharacter;
+
+    invoke-direct {v0}, Lcom/itextpdf/text/TabSplitCharacter;-><init>()V
+
+    sput-object v0, Lcom/itextpdf/text/TabSplitCharacter;->TAB:Lcom/itextpdf/text/SplitCharacter;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public isSplitCharacter(III[C[Lcom/itextpdf/text/pdf/PdfChunk;)Z
+    .locals 0
+
+    const/4 p1, 0x1
+
+    return p1
+.end method

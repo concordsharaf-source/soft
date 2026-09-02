@@ -1,0 +1,388 @@
+.class public Lcom/itextpdf/text/pdf/events/PdfPageEventForwarder;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lcom/itextpdf/text/pdf/PdfPageEvent;
+
+
+# instance fields
+.field protected events:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList<",
+            "Lcom/itextpdf/text/pdf/PdfPageEvent;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/itextpdf/text/pdf/events/PdfPageEventForwarder;->events:Ljava/util/ArrayList;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public addPageEvent(Lcom/itextpdf/text/pdf/PdfPageEvent;)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/itextpdf/text/pdf/events/PdfPageEventForwarder;->events:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public onChapter(Lcom/itextpdf/text/pdf/PdfWriter;Lcom/itextpdf/text/Document;FLcom/itextpdf/text/Paragraph;)V
+    .locals 2
+
+    iget-object v0, p0, Lcom/itextpdf/text/pdf/events/PdfPageEventForwarder;->events:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/itextpdf/text/pdf/PdfPageEvent;
+
+    invoke-interface {v1, p1, p2, p3, p4}, Lcom/itextpdf/text/pdf/PdfPageEvent;->onChapter(Lcom/itextpdf/text/pdf/PdfWriter;Lcom/itextpdf/text/Document;FLcom/itextpdf/text/Paragraph;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public onChapterEnd(Lcom/itextpdf/text/pdf/PdfWriter;Lcom/itextpdf/text/Document;F)V
+    .locals 2
+
+    iget-object v0, p0, Lcom/itextpdf/text/pdf/events/PdfPageEventForwarder;->events:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/itextpdf/text/pdf/PdfPageEvent;
+
+    invoke-interface {v1, p1, p2, p3}, Lcom/itextpdf/text/pdf/PdfPageEvent;->onChapterEnd(Lcom/itextpdf/text/pdf/PdfWriter;Lcom/itextpdf/text/Document;F)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public onCloseDocument(Lcom/itextpdf/text/pdf/PdfWriter;Lcom/itextpdf/text/Document;)V
+    .locals 2
+
+    iget-object v0, p0, Lcom/itextpdf/text/pdf/events/PdfPageEventForwarder;->events:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/itextpdf/text/pdf/PdfPageEvent;
+
+    invoke-interface {v1, p1, p2}, Lcom/itextpdf/text/pdf/PdfPageEvent;->onCloseDocument(Lcom/itextpdf/text/pdf/PdfWriter;Lcom/itextpdf/text/Document;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public onEndPage(Lcom/itextpdf/text/pdf/PdfWriter;Lcom/itextpdf/text/Document;)V
+    .locals 2
+
+    iget-object v0, p0, Lcom/itextpdf/text/pdf/events/PdfPageEventForwarder;->events:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/itextpdf/text/pdf/PdfPageEvent;
+
+    invoke-interface {v1, p1, p2}, Lcom/itextpdf/text/pdf/PdfPageEvent;->onEndPage(Lcom/itextpdf/text/pdf/PdfWriter;Lcom/itextpdf/text/Document;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public onGenericTag(Lcom/itextpdf/text/pdf/PdfWriter;Lcom/itextpdf/text/Document;Lcom/itextpdf/text/Rectangle;Ljava/lang/String;)V
+    .locals 2
+
+    iget-object v0, p0, Lcom/itextpdf/text/pdf/events/PdfPageEventForwarder;->events:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/itextpdf/text/pdf/PdfPageEvent;
+
+    invoke-interface {v1, p1, p2, p3, p4}, Lcom/itextpdf/text/pdf/PdfPageEvent;->onGenericTag(Lcom/itextpdf/text/pdf/PdfWriter;Lcom/itextpdf/text/Document;Lcom/itextpdf/text/Rectangle;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public onOpenDocument(Lcom/itextpdf/text/pdf/PdfWriter;Lcom/itextpdf/text/Document;)V
+    .locals 2
+
+    iget-object v0, p0, Lcom/itextpdf/text/pdf/events/PdfPageEventForwarder;->events:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/itextpdf/text/pdf/PdfPageEvent;
+
+    invoke-interface {v1, p1, p2}, Lcom/itextpdf/text/pdf/PdfPageEvent;->onOpenDocument(Lcom/itextpdf/text/pdf/PdfWriter;Lcom/itextpdf/text/Document;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public onParagraph(Lcom/itextpdf/text/pdf/PdfWriter;Lcom/itextpdf/text/Document;F)V
+    .locals 2
+
+    iget-object v0, p0, Lcom/itextpdf/text/pdf/events/PdfPageEventForwarder;->events:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/itextpdf/text/pdf/PdfPageEvent;
+
+    invoke-interface {v1, p1, p2, p3}, Lcom/itextpdf/text/pdf/PdfPageEvent;->onParagraph(Lcom/itextpdf/text/pdf/PdfWriter;Lcom/itextpdf/text/Document;F)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public onParagraphEnd(Lcom/itextpdf/text/pdf/PdfWriter;Lcom/itextpdf/text/Document;F)V
+    .locals 2
+
+    iget-object v0, p0, Lcom/itextpdf/text/pdf/events/PdfPageEventForwarder;->events:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/itextpdf/text/pdf/PdfPageEvent;
+
+    invoke-interface {v1, p1, p2, p3}, Lcom/itextpdf/text/pdf/PdfPageEvent;->onParagraphEnd(Lcom/itextpdf/text/pdf/PdfWriter;Lcom/itextpdf/text/Document;F)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public onSection(Lcom/itextpdf/text/pdf/PdfWriter;Lcom/itextpdf/text/Document;FILcom/itextpdf/text/Paragraph;)V
+    .locals 8
+
+    iget-object v0, p0, Lcom/itextpdf/text/pdf/events/PdfPageEventForwarder;->events:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v2, v1
+
+    check-cast v2, Lcom/itextpdf/text/pdf/PdfPageEvent;
+
+    move-object v3, p1
+
+    move-object v4, p2
+
+    move v5, p3
+
+    move v6, p4
+
+    move-object v7, p5
+
+    invoke-interface/range {v2 .. v7}, Lcom/itextpdf/text/pdf/PdfPageEvent;->onSection(Lcom/itextpdf/text/pdf/PdfWriter;Lcom/itextpdf/text/Document;FILcom/itextpdf/text/Paragraph;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public onSectionEnd(Lcom/itextpdf/text/pdf/PdfWriter;Lcom/itextpdf/text/Document;F)V
+    .locals 2
+
+    iget-object v0, p0, Lcom/itextpdf/text/pdf/events/PdfPageEventForwarder;->events:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/itextpdf/text/pdf/PdfPageEvent;
+
+    invoke-interface {v1, p1, p2, p3}, Lcom/itextpdf/text/pdf/PdfPageEvent;->onSectionEnd(Lcom/itextpdf/text/pdf/PdfWriter;Lcom/itextpdf/text/Document;F)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public onStartPage(Lcom/itextpdf/text/pdf/PdfWriter;Lcom/itextpdf/text/Document;)V
+    .locals 2
+
+    iget-object v0, p0, Lcom/itextpdf/text/pdf/events/PdfPageEventForwarder;->events:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/itextpdf/text/pdf/PdfPageEvent;
+
+    invoke-interface {v1, p1, p2}, Lcom/itextpdf/text/pdf/PdfPageEvent;->onStartPage(Lcom/itextpdf/text/pdf/PdfWriter;Lcom/itextpdf/text/Document;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method

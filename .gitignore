@@ -1,0 +1,8 @@
+dist/
+*.keystore
+*.jks
+build/
+.gradle/
+.idea/
+*.log
+.DS_Store

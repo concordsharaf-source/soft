@@ -1,0 +1,76 @@
+name: Build APK
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  APK_NAME: soft
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install build tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libsmali-java zip
+          sdkmanager "platform-tools" "build-tools;35.0.0"
+
+      - name: Assemble and rebuild APK
+        run: |
+          chmod +x tools/build-apk.sh
+          tools/build-apk.sh "dist/${APK_NAME}-unsigned.apk"
+
+      - name: Align and sign APK
+        env:
+          BUILD_TOOLS: ${{ env.ANDROID_HOME }}/build-tools/35.0.0
+        run: |
+          keytool -genkeypair -v \
+            -keystore signing.keystore \
+            -storepass android \
+            -keypass android \
+            -alias soft \
+            -keyalg RSA \
+            -keysize 2048 \
+            -validity 10000 \
+            -dname "CN=soft, OU=soft, O=soft, L=Local, ST=Local, C=SA"
+          "$BUILD_TOOLS/zipalign" -f -p 4 \
+            "dist/${APK_NAME}-unsigned.apk" \
+            "dist/${APK_NAME}-aligned.apk"
+          "$BUILD_TOOLS/apksigner" sign \
+            --ks signing.keystore \
+            --ks-pass pass:android \
+            --key-pass pass:android \
+            --out "dist/${APK_NAME}.apk" \
+            "dist/${APK_NAME}-aligned.apk"
+          "$BUILD_TOOLS/apksigner" verify --verbose "dist/${APK_NAME}.apk"
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: soft-apk
+          path: dist/soft.apk
+          if-no-files-found: error
+
+      - name: Create GitHub release asset
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/soft.apk

@@ -1,0 +1,47 @@
+.class Lcom/itextpdf/text/pdf/FilterHandlers$Filter_ASCII85DECODE;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lcom/itextpdf/text/pdf/FilterHandlers$FilterHandler;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/itextpdf/text/pdf/FilterHandlers;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = "Filter_ASCII85DECODE"
+.end annotation
+
+
+# direct methods
+.method private constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lcom/itextpdf/text/pdf/FilterHandlers$1;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/itextpdf/text/pdf/FilterHandlers$Filter_ASCII85DECODE;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public decode([BLcom/itextpdf/text/pdf/PdfName;Lcom/itextpdf/text/pdf/PdfObject;Lcom/itextpdf/text/pdf/PdfDictionary;)[B
+    .locals 0
+
+    invoke-static {p1}, Lcom/itextpdf/text/pdf/PdfReader;->ASCII85Decode([B)[B
+
+    move-result-object p1
+
+    return-object p1
+.end method

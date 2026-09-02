@@ -1,0 +1,64 @@
+.class Lcom/itextpdf/text/io/GroupedRandomAccessSource$SourceEntry;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/itextpdf/text/io/GroupedRandomAccessSource;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = "SourceEntry"
+.end annotation
+
+
+# instance fields
+.field final firstByte:J
+
+.field final index:I
+
+.field final lastByte:J
+
+.field final source:Lcom/itextpdf/text/io/RandomAccessSource;
+
+
+# direct methods
+.method public constructor <init>(ILcom/itextpdf/text/io/RandomAccessSource;J)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Lcom/itextpdf/text/io/GroupedRandomAccessSource$SourceEntry;->index:I
+
+    iput-object p2, p0, Lcom/itextpdf/text/io/GroupedRandomAccessSource$SourceEntry;->source:Lcom/itextpdf/text/io/RandomAccessSource;
+
+    iput-wide p3, p0, Lcom/itextpdf/text/io/GroupedRandomAccessSource$SourceEntry;->firstByte:J
+
+    invoke-interface {p2}, Lcom/itextpdf/text/io/RandomAccessSource;->length()J
+
+    move-result-wide p1
+
+    add-long/2addr p3, p1
+
+    const-wide/16 p1, 0x1
+
+    sub-long/2addr p3, p1
+
+    iput-wide p3, p0, Lcom/itextpdf/text/io/GroupedRandomAccessSource$SourceEntry;->lastByte:J
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public offsetN(J)J
+    .locals 2
+
+    iget-wide v0, p0, Lcom/itextpdf/text/io/GroupedRandomAccessSource$SourceEntry;->firstByte:J
+
+    sub-long/2addr p1, v0
+
+    return-wide p1
+.end method

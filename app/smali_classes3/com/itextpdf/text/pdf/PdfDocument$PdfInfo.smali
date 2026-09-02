@@ -1,0 +1,203 @@
+.class public Lcom/itextpdf/text/pdf/PdfDocument$PdfInfo;
+.super Lcom/itextpdf/text/pdf/PdfDictionary;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/itextpdf/text/pdf/PdfDocument;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = "PdfInfo"
+.end annotation
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/itextpdf/text/pdf/PdfDictionary;-><init>()V
+
+    invoke-virtual {p0}, Lcom/itextpdf/text/pdf/PdfDocument$PdfInfo;->addProducer()V
+
+    invoke-virtual {p0}, Lcom/itextpdf/text/pdf/PdfDocument$PdfInfo;->addCreationDate()V
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/itextpdf/text/pdf/PdfDocument$PdfInfo;-><init>()V
+
+    invoke-virtual {p0, p2}, Lcom/itextpdf/text/pdf/PdfDocument$PdfInfo;->addTitle(Ljava/lang/String;)V
+
+    invoke-virtual {p0, p3}, Lcom/itextpdf/text/pdf/PdfDocument$PdfInfo;->addSubject(Ljava/lang/String;)V
+
+    invoke-virtual {p0, p1}, Lcom/itextpdf/text/pdf/PdfDocument$PdfInfo;->addAuthor(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public addAuthor(Ljava/lang/String;)V
+    .locals 3
+
+    sget-object v0, Lcom/itextpdf/text/pdf/PdfName;->AUTHOR:Lcom/itextpdf/text/pdf/PdfName;
+
+    new-instance v1, Lcom/itextpdf/text/pdf/PdfString;
+
+    const-string v2, "UnicodeBig"
+
+    invoke-direct {v1, p1, v2}, Lcom/itextpdf/text/pdf/PdfString;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {p0, v0, v1}, Lcom/itextpdf/text/pdf/PdfDictionary;->put(Lcom/itextpdf/text/pdf/PdfName;Lcom/itextpdf/text/pdf/PdfObject;)V
+
+    return-void
+.end method
+
+.method public addCreationDate()V
+    .locals 2
+
+    new-instance v0, Lcom/itextpdf/text/pdf/PdfDate;
+
+    invoke-direct {v0}, Lcom/itextpdf/text/pdf/PdfDate;-><init>()V
+
+    sget-object v1, Lcom/itextpdf/text/pdf/PdfName;->CREATIONDATE:Lcom/itextpdf/text/pdf/PdfName;
+
+    invoke-virtual {p0, v1, v0}, Lcom/itextpdf/text/pdf/PdfDictionary;->put(Lcom/itextpdf/text/pdf/PdfName;Lcom/itextpdf/text/pdf/PdfObject;)V
+
+    sget-object v1, Lcom/itextpdf/text/pdf/PdfName;->MODDATE:Lcom/itextpdf/text/pdf/PdfName;
+
+    invoke-virtual {p0, v1, v0}, Lcom/itextpdf/text/pdf/PdfDictionary;->put(Lcom/itextpdf/text/pdf/PdfName;Lcom/itextpdf/text/pdf/PdfObject;)V
+
+    return-void
+.end method
+
+.method public addCreator(Ljava/lang/String;)V
+    .locals 3
+
+    sget-object v0, Lcom/itextpdf/text/pdf/PdfName;->CREATOR:Lcom/itextpdf/text/pdf/PdfName;
+
+    new-instance v1, Lcom/itextpdf/text/pdf/PdfString;
+
+    const-string v2, "UnicodeBig"
+
+    invoke-direct {v1, p1, v2}, Lcom/itextpdf/text/pdf/PdfString;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {p0, v0, v1}, Lcom/itextpdf/text/pdf/PdfDictionary;->put(Lcom/itextpdf/text/pdf/PdfName;Lcom/itextpdf/text/pdf/PdfObject;)V
+
+    return-void
+.end method
+
+.method public addKeywords(Ljava/lang/String;)V
+    .locals 3
+
+    sget-object v0, Lcom/itextpdf/text/pdf/PdfName;->KEYWORDS:Lcom/itextpdf/text/pdf/PdfName;
+
+    new-instance v1, Lcom/itextpdf/text/pdf/PdfString;
+
+    const-string v2, "UnicodeBig"
+
+    invoke-direct {v1, p1, v2}, Lcom/itextpdf/text/pdf/PdfString;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {p0, v0, v1}, Lcom/itextpdf/text/pdf/PdfDictionary;->put(Lcom/itextpdf/text/pdf/PdfName;Lcom/itextpdf/text/pdf/PdfObject;)V
+
+    return-void
+.end method
+
+.method public addProducer()V
+    .locals 3
+
+    sget-object v0, Lcom/itextpdf/text/pdf/PdfName;->PRODUCER:Lcom/itextpdf/text/pdf/PdfName;
+
+    new-instance v1, Lcom/itextpdf/text/pdf/PdfString;
+
+    invoke-static {}, Lcom/itextpdf/text/Version;->getInstance()Lcom/itextpdf/text/Version;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/itextpdf/text/Version;->getVersion()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Lcom/itextpdf/text/pdf/PdfString;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0, v0, v1}, Lcom/itextpdf/text/pdf/PdfDictionary;->put(Lcom/itextpdf/text/pdf/PdfName;Lcom/itextpdf/text/pdf/PdfObject;)V
+
+    return-void
+.end method
+
+.method public addSubject(Ljava/lang/String;)V
+    .locals 3
+
+    sget-object v0, Lcom/itextpdf/text/pdf/PdfName;->SUBJECT:Lcom/itextpdf/text/pdf/PdfName;
+
+    new-instance v1, Lcom/itextpdf/text/pdf/PdfString;
+
+    const-string v2, "UnicodeBig"
+
+    invoke-direct {v1, p1, v2}, Lcom/itextpdf/text/pdf/PdfString;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {p0, v0, v1}, Lcom/itextpdf/text/pdf/PdfDictionary;->put(Lcom/itextpdf/text/pdf/PdfName;Lcom/itextpdf/text/pdf/PdfObject;)V
+
+    return-void
+.end method
+
+.method public addTitle(Ljava/lang/String;)V
+    .locals 3
+
+    sget-object v0, Lcom/itextpdf/text/pdf/PdfName;->TITLE:Lcom/itextpdf/text/pdf/PdfName;
+
+    new-instance v1, Lcom/itextpdf/text/pdf/PdfString;
+
+    const-string v2, "UnicodeBig"
+
+    invoke-direct {v1, p1, v2}, Lcom/itextpdf/text/pdf/PdfString;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {p0, v0, v1}, Lcom/itextpdf/text/pdf/PdfDictionary;->put(Lcom/itextpdf/text/pdf/PdfName;Lcom/itextpdf/text/pdf/PdfObject;)V
+
+    return-void
+.end method
+
+.method public addkey(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 2
+
+    const-string v0, "Producer"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    const-string v0, "CreationDate"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Lcom/itextpdf/text/pdf/PdfName;
+
+    invoke-direct {v0, p1}, Lcom/itextpdf/text/pdf/PdfName;-><init>(Ljava/lang/String;)V
+
+    new-instance p1, Lcom/itextpdf/text/pdf/PdfString;
+
+    const-string v1, "UnicodeBig"
+
+    invoke-direct {p1, p2, v1}, Lcom/itextpdf/text/pdf/PdfString;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {p0, v0, p1}, Lcom/itextpdf/text/pdf/PdfDictionary;->put(Lcom/itextpdf/text/pdf/PdfName;Lcom/itextpdf/text/pdf/PdfObject;)V
+
+    :cond_1
+    :goto_0
+    return-void
+.end method

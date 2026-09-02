@@ -1,0 +1,79 @@
+.class Lcom/itextpdf/text/pdf/security/MakeXmlSignature$EmptyKey;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/security/Key;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/itextpdf/text/pdf/security/MakeXmlSignature;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = "EmptyKey"
+.end annotation
+
+
+# static fields
+.field private static instance:Lcom/itextpdf/text/pdf/security/MakeXmlSignature$EmptyKey;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lcom/itextpdf/text/pdf/security/MakeXmlSignature$EmptyKey;
+
+    invoke-direct {v0}, Lcom/itextpdf/text/pdf/security/MakeXmlSignature$EmptyKey;-><init>()V
+
+    sput-object v0, Lcom/itextpdf/text/pdf/security/MakeXmlSignature$EmptyKey;->instance:Lcom/itextpdf/text/pdf/security/MakeXmlSignature$EmptyKey;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static getInstance()Lcom/itextpdf/text/pdf/security/MakeXmlSignature$EmptyKey;
+    .locals 1
+
+    sget-object v0, Lcom/itextpdf/text/pdf/security/MakeXmlSignature$EmptyKey;->instance:Lcom/itextpdf/text/pdf/security/MakeXmlSignature$EmptyKey;
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public getAlgorithm()Ljava/lang/String;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public getEncoded()[B
+    .locals 1
+
+    const/4 v0, 0x0
+
+    new-array v0, v0, [B
+
+    return-object v0
+.end method
+
+.method public getFormat()Ljava/lang/String;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return-object v0
+.end method

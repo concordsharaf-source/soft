@@ -1,0 +1,53 @@
+.class public Linfo/aalmoghalis/inventorz/activity/Bill_edit$k1;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Linfo/aalmoghalis/inventorz/activity/Bill_edit;->j1()V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+
+# instance fields
+.field public final synthetic a:Landroid/view/View;
+
+.field public final synthetic b:Linfo/aalmoghalis/inventorz/activity/Bill_edit;
+
+
+# direct methods
+.method public constructor <init>(Linfo/aalmoghalis/inventorz/activity/Bill_edit;Landroid/view/View;)V
+    .locals 0
+
+    iput-object p1, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$k1;->b:Linfo/aalmoghalis/inventorz/activity/Bill_edit;
+
+    iput-object p2, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$k1;->a:Landroid/view/View;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public run()V
+    .locals 2
+
+    iget-object v0, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$k1;->b:Linfo/aalmoghalis/inventorz/activity/Bill_edit;
+
+    iget-object v0, v0, Linfo/aalmoghalis/inventorz/activity/Bill_edit;->i:LZ00;
+
+    iget-object v1, p0, Linfo/aalmoghalis/inventorz/activity/Bill_edit$k1;->a:Landroid/view/View;
+
+    invoke-virtual {v0, v1}, LZ00;->x9(Landroid/view/View;)V
+
+    return-void
+.end method

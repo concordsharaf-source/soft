@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <View android:id="@id/primerdivisor3" android:background="@color/gold" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:weightSum="140.0">
+        <TextView android:textSize="16.0dip" android:textStyle="bold" android:gravity="center|right" android:id="@id/tr_tot3" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="0" android:layout_weight="40.0" />
+        <TextView android:textSize="16.0dip" android:textStyle="bold" android:gravity="center|right" android:id="@id/tr_tot2" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="0" android:layout_weight="30.0" />
+        <TextView android:textSize="16.0dip" android:textStyle="bold" android:gravity="center|right" android:id="@id/tr_tot" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="0" android:layout_weight="30.0" />
+        <TextView android:gravity="center" android:layout_gravity="center" android:id="@id/count" android:background="@drawable/my_circle" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="20.0dip" android:text="0" />
+        <TextView android:textSize="16.0dip" android:textStyle="bold" android:gravity="center|right" android:id="@id/bill_tot_hdr" android:layout_width="0.0dip" android:layout_height="fill_parent" android:hint="@string/total_sum" android:layout_weight="30.0" />
+    </LinearLayout>
+</LinearLayout>

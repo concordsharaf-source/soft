@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/edit_cus_interface" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:paddingStart="2.0dip" android:paddingEnd="2.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="right" android:layout_gravity="right" android:orientation="vertical" android:id="@id/u_curr_ll" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/edit_cus_interface5" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="10.0" android:layout_centerHorizontal="true">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/edit_cus_interface5_1" android:paddingLeft="10.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="4.0" android:layout_centerHorizontal="true" android:paddingStart="10.0dip">
+            <Button android:textSize="16.0dip" android:textStyle="bold" android:textColor="@android:color/white" android:id="@id/btn_cus_det_add1" android:background="@drawable/my_border" android:paddingLeft="5.0dip" android:layout_width="fill_parent" android:layout_height="30.0dip" android:text="@string/btn_cancel" android:layout_below="@id/edit_cus_gsm" android:paddingStart="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/edit_cus_interface5_2" android:paddingLeft="10.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="4.0" android:layout_centerHorizontal="true" android:paddingStart="10.0dip">
+            <Button android:textSize="16.0dip" android:textStyle="bold" android:textColor="@android:color/white" android:id="@id/btn_cus_det_add2" android:background="@drawable/my_border" android:layout_width="fill_parent" android:layout_height="30.0dip" android:text="@string/save" android:layout_below="@id/edit_cus_gsm" android:paddingStart="5.0dip" android:paddingEnd="5.0dip" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,178 @@
+.class public Linfo/aalmoghalis/inventorz/activity/Offer_edit$P;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/text/TextWatcher;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Linfo/aalmoghalis/inventorz/activity/Offer_edit;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+
+# instance fields
+.field public final synthetic a:Linfo/aalmoghalis/inventorz/activity/Offer_edit;
+
+
+# direct methods
+.method public constructor <init>(Linfo/aalmoghalis/inventorz/activity/Offer_edit;)V
+    .locals 0
+
+    iput-object p1, p0, Linfo/aalmoghalis/inventorz/activity/Offer_edit$P;->a:Linfo/aalmoghalis/inventorz/activity/Offer_edit;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public afterTextChanged(Landroid/text/Editable;)V
+    .locals 2
+
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v0, p0, Linfo/aalmoghalis/inventorz/activity/Offer_edit$P;->a:Linfo/aalmoghalis/inventorz/activity/Offer_edit;
+
+    iget-object v0, v0, Linfo/aalmoghalis/inventorz/activity/Offer_edit;->n1:Landroid/widget/EditText;
+
+    invoke-virtual {v0}, Landroid/view/View;->hasFocus()Z
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v0, ":"
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Linfo/aalmoghalis/inventorz/activity/Offer_edit$P;->a:Linfo/aalmoghalis/inventorz/activity/Offer_edit;
+
+    iget-object v1, v1, Linfo/aalmoghalis/inventorz/activity/Offer_edit;->k1:Landroid/widget/EditText;
+
+    invoke-virtual {v1}, Landroid/view/View;->hasFocus()Z
+
+    move-result v1
+
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v0, p0, Linfo/aalmoghalis/inventorz/activity/Offer_edit$P;->a:Linfo/aalmoghalis/inventorz/activity/Offer_edit;
+
+    iget-object v0, v0, Linfo/aalmoghalis/inventorz/activity/Offer_edit;->l1:Landroid/widget/EditText;
+
+    invoke-virtual {v0}, Landroid/view/View;->hasFocus()Z
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v0, "#"
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v0, p0, Linfo/aalmoghalis/inventorz/activity/Offer_edit$P;->a:Linfo/aalmoghalis/inventorz/activity/Offer_edit;
+
+    iget-boolean v0, v0, Linfo/aalmoghalis/inventorz/activity/Offer_edit;->R0:Z
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v0, "item_focus="
+
+    invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object p1, p0, Linfo/aalmoghalis/inventorz/activity/Offer_edit$P;->a:Linfo/aalmoghalis/inventorz/activity/Offer_edit;
+
+    iget-boolean v0, p1, Linfo/aalmoghalis/inventorz/activity/Offer_edit;->R0:Z
+
+    if-nez v0, :cond_2
+
+    iget-object p1, p1, Linfo/aalmoghalis/inventorz/activity/Offer_edit;->s1:Landroid/widget/EditText;
+
+    invoke-virtual {p1}, Landroid/view/View;->hasFocus()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p0, Linfo/aalmoghalis/inventorz/activity/Offer_edit$P;->a:Linfo/aalmoghalis/inventorz/activity/Offer_edit;
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p1, v0}, Linfo/aalmoghalis/inventorz/activity/Offer_edit;->V1(I)V
+
+    goto :goto_0
+
+    :cond_0
+    iget-object p1, p0, Linfo/aalmoghalis/inventorz/activity/Offer_edit$P;->a:Linfo/aalmoghalis/inventorz/activity/Offer_edit;
+
+    iget-object p1, p1, Linfo/aalmoghalis/inventorz/activity/Offer_edit;->q1:Landroid/widget/EditText;
+
+    invoke-virtual {p1}, Landroid/view/View;->hasFocus()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    iget-object p1, p0, Linfo/aalmoghalis/inventorz/activity/Offer_edit$P;->a:Linfo/aalmoghalis/inventorz/activity/Offer_edit;
+
+    const/4 v0, 0x2
+
+    invoke-virtual {p1, v0}, Linfo/aalmoghalis/inventorz/activity/Offer_edit;->V1(I)V
+
+    goto :goto_0
+
+    :cond_1
+    iget-object p1, p0, Linfo/aalmoghalis/inventorz/activity/Offer_edit$P;->a:Linfo/aalmoghalis/inventorz/activity/Offer_edit;
+
+    iget-object p1, p1, Linfo/aalmoghalis/inventorz/activity/Offer_edit;->r1:Landroid/widget/EditText;
+
+    invoke-virtual {p1}, Landroid/view/View;->hasFocus()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_3
+
+    iget-object p1, p0, Linfo/aalmoghalis/inventorz/activity/Offer_edit$P;->a:Linfo/aalmoghalis/inventorz/activity/Offer_edit;
+
+    const/4 v0, 0x3
+
+    invoke-virtual {p1, v0}, Linfo/aalmoghalis/inventorz/activity/Offer_edit;->V1(I)V
+
+    goto :goto_0
+
+    :cond_2
+    const/4 v0, 0x0
+
+    iput-boolean v0, p1, Linfo/aalmoghalis/inventorz/activity/Offer_edit;->R0:Z
+
+    :cond_3
+    :goto_0
+    return-void
+.end method
+
+.method public beforeTextChanged(Ljava/lang/CharSequence;III)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onTextChanged(Ljava/lang/CharSequence;III)V
+    .locals 0
+
+    return-void
+.end method

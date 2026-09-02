@@ -1,0 +1,213 @@
+.class public final LLd0;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/util/Iterator;
+
+
+# instance fields
+.field public a:I
+
+.field public b:Z
+
+.field public c:Ljava/util/Iterator;
+
+.field public final synthetic d:LSd0;
+
+
+# direct methods
+.method public synthetic constructor <init>(LSd0;Lcom/google/android/gms/internal/play_billing/zzhc;)V
+    .locals 0
+
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iput-object p1, p0, LLd0;->d:LSd0;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 p1, -0x1
+
+    iput p1, p0, LLd0;->a:I
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()Ljava/util/Iterator;
+    .locals 1
+
+    iget-object v0, p0, LLd0;->c:Ljava/util/Iterator;
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, LLd0;->d:LSd0;
+
+    invoke-static {v0}, LSd0;->h(LSd0;)Ljava/util/Map;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    iput-object v0, p0, LLd0;->c:Ljava/util/Iterator;
+
+    :cond_0
+    iget-object v0, p0, LLd0;->c:Ljava/util/Iterator;
+
+    return-object v0
+.end method
+
+.method public final hasNext()Z
+    .locals 4
+
+    iget v0, p0, LLd0;->a:I
+
+    const/4 v1, 0x1
+
+    add-int/2addr v0, v1
+
+    iget-object v2, p0, LLd0;->d:LSd0;
+
+    invoke-static {v2}, LSd0;->b(LSd0;)I
+
+    move-result v3
+
+    if-lt v0, v3, :cond_2
+
+    invoke-static {v2}, LSd0;->h(LSd0;)Ljava/util/Map;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
+
+    move-result v0
+
+    const/4 v2, 0x0
+
+    if-nez v0, :cond_1
+
+    invoke-virtual {p0}, LLd0;->a()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    return v2
+
+    :cond_1
+    const/4 v1, 0x0
+
+    :cond_2
+    :goto_0
+    return v1
+.end method
+
+.method public final bridge synthetic next()Ljava/lang/Object;
+    .locals 3
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, LLd0;->b:Z
+
+    iget v1, p0, LLd0;->a:I
+
+    add-int/2addr v1, v0
+
+    iput v1, p0, LLd0;->a:I
+
+    iget-object v0, p0, LLd0;->d:LSd0;
+
+    invoke-static {v0}, LSd0;->b(LSd0;)I
+
+    move-result v2
+
+    if-ge v1, v2, :cond_0
+
+    invoke-static {v0}, LSd0;->l(LSd0;)[Ljava/lang/Object;
+
+    move-result-object v0
+
+    aget-object v0, v0, v1
+
+    check-cast v0, Lxd0;
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, LLd0;->a()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    :goto_0
+    return-object v0
+.end method
+
+.method public final remove()V
+    .locals 3
+
+    iget-boolean v0, p0, LLd0;->b:Z
+
+    if-eqz v0, :cond_1
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, LLd0;->b:Z
+
+    iget-object v0, p0, LLd0;->d:LSd0;
+
+    invoke-static {v0}, LSd0;->j(LSd0;)V
+
+    iget v1, p0, LLd0;->a:I
+
+    invoke-static {v0}, LSd0;->b(LSd0;)I
+
+    move-result v2
+
+    if-ge v1, v2, :cond_0
+
+    add-int/lit8 v2, v1, -0x1
+
+    iput v2, p0, LLd0;->a:I
+
+    invoke-static {v0, v1}, LSd0;->e(LSd0;I)Ljava/lang/Object;
+
+    return-void
+
+    :cond_0
+    invoke-virtual {p0}, LLd0;->a()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
+
+    return-void
+
+    :cond_1
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "remove() was called before next()"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
