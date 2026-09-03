@@ -351,18 +351,14 @@
     <string name="connection_error">Connection error</string>
     <string name="contact_hdr">للتـواصـل والـدعـم</string>
     <string name="contact_msg">"
- واتساب : - 
- +967770388100 
-
  - البـريد الإلكتـروني : 
  engmogh@gmail.com 
 "</string>
     <string name="contact_msg2">" 
  "<b> الإشتراك عن طريق المتجر..اضغط هنا </b>" 
  "</string>
-    <string name="contact_msg3">"يمكنك الحصول على التفعيل بالتواصل على : 
- الواتس اب/الرسائل النصية : - 
- +967770388100"</string>
+    <string name="contact_msg3">"يمكنك الحصول على التفعيل بالتواصل عبر البريد الإلكتروني :
+ engmogh@gmail.com"</string>
     <string name="copy">Copy</string>
     <string name="cost_account">حساب الرسوم</string>
     <string name="cost_avg">ت/الشراء</string>

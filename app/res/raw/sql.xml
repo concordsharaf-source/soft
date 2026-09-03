@@ -89,7 +89,7 @@
 		);
 	</statement>
 	<statement>
-		insert into branches (id,name) values(0,'المخزن الرئيسي');
+		insert into branches (id,name) values(0,'المخزن');
 	</statement>
 
 

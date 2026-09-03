@@ -328,7 +328,7 @@
 		);
 	</statement>
 	<statement>
-		insert or ignore into branches (id,name) values(0,'المخزن الرئيسي');
+		insert or ignore into branches (id,name) values(0,'المخزن');
 	</statement>
 
 
