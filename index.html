@@ -191,7 +191,7 @@
 </div>
 
 <script>
-    const API_KEY = "5en3rt4nq7v4zycnsnoe6ho60d2ee0z3";
+    const WORKER_URL = "https://still-poetry-d74e.concordsharaf.workers.dev";
 
     async function generateImage() {
         const prompt = document.getElementById("prompt").value.trim();
@@ -215,10 +215,9 @@
         statusText.innerText = "جاري إرسال الطلب...";
 
         try {
-            const runResponse = await fetch(`https://api.wiro.ai/v1/Run/${model}`, {
+            const runResponse = await fetch(`${WORKER_URL}/v1/Run/${model}`, {
                 method: "POST",
                 headers: {
-                    "x-api-key": API_KEY,
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
@@ -241,10 +240,9 @@
             while (!imageUrl) {
                 await new Promise(resolve => setTimeout(resolve, 3000));
 
-                const taskResponse = await fetch("https://api.wiro.ai/v1/Task/Detail", {
+                const taskResponse = await fetch(`${WORKER_URL}/v1/Task/Detail`, {
                     method: "POST",
                     headers: {
-                        "x-api-key": API_KEY,
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
