@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مولد الصور بالذكاء الاصطناعي</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-hover: #4f46e5;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 15px;
+        }
+
+        .container {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 20px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border-color);
+        }
+
+        h1 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        textarea, select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background-color: #0f172a;
+            color: #fff;
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 90px;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:disabled {
+            background-color: #475569;
+            cursor: not-allowed;
+        }
+
+        .status {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            display: none;
+        }
+
+        .result-container {
+            margin-top: 20px;
+            display: none;
+            text-align: center;
+        }
+
+        .result-container img {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 12px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 12px;
+            background-color: #10b981;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+            vertical-align: middle;
+            margin-left: 8px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>مولد الصور بالذكاء الاصطناعي</h1>
+    
+    <div class="form-group">
+        <label for="prompt">الوصف النصي (Prompt)</label>
+        <textarea id="prompt" placeholder="اكتب وصف الصورة بالتفصيل بالإنجليزية..."></textarea>
+    </div>
+
+    <div class="options-grid form-group">
+        <div>
+            <label for="model">النموذج</label>
+            <select id="model">
+                <option value="bytedance/seedream-v5-lite-uncensored">Seedream 5.0 Lite</option>
+                <option value="bytedance/seedream-v4-5-uncensored">Seedream 4.5</option>
+            </select>
+        </div>
+        <div>
+            <label for="aspectRatio">الأبعاد</label>
+            <select id="aspectRatio">
+                <option value="1:1">مربع (1:1)</option>
+                <option value="16:9">أفقي (16:9)</option>
+                <option value="9:16">عمودي (9:16)</option>
+            </select>
+        </div>
+    </div>
+
+    <button id="generateBtn" onclick="generateImage()">توليد الصورة</button>
+
+    <div id="status" class="status">
+        <span class="spinner"></span>
+        <span id="statusText">جاري المعالجة...</span>
+    </div>
+
+    <div id="resultContainer" class="result-container">
+        <img id="outputImage" src="" alt="الصورة الموالّدة">
+        <a id="downloadBtn" href="" target="_blank" download="generated-image.png" class="download-btn">تحميل الصورة</a>
+    </div>
+</div>
+
+<script>
+    const API_KEY = "5en3rt4nq7v4zycnsnoe6ho60d2ee0z3";
+    const PROXY = "https://corsproxy.io/?";
+
+    async function generateImage() {
+        const prompt = document.getElementById("prompt").value.trim();
+        const model = document.getElementById("model").value;
+        const aspectRatio = document.getElementById("aspectRatio").value;
+        const generateBtn = document.getElementById("generateBtn");
+        const status = document.getElementById("status");
+        const statusText = document.getElementById("statusText");
+        const resultContainer = document.getElementById("resultContainer");
+        const outputImage = document.getElementById("outputImage");
+        const downloadBtn = document.getElementById("downloadBtn");
+
+        if (!prompt) {
+            alert("يرجى كتابة وصف الصورة أولاً.");
+            return;
+        }
+
+        generateBtn.disabled = true;
+        status.style.display = "block";
+        resultContainer.style.display = "none";
+        statusText.innerText = "جاري إرسال الطلب...";
+
+        try {
+            const targetUrl = `https://api.wiro.ai/v1/Run/${model}`;
+            const runResponse = await fetch(PROXY + encodeURIComponent(targetUrl), {
+                method: "POST",
+                headers: {
+                    "x-api-key": API_KEY,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    prompt: prompt,
+                    resolution: "2k",
+                    aspectRatio: aspectRatio
+                })
+            });
+
+            const runData = await runResponse.json();
+
+            if (!runResponse.ok || !runData.socketaccesstoken) {
+                throw new Error(runData.message || "حدث خطأ في الاستجابة من السيرفر.");
+            }
+
+            const taskToken = runData.socketaccesstoken;
+            statusText.innerText = "جاري توليد الصورة... يرجى الانتظار";
+
+            let imageUrl = null;
+            while (!imageUrl) {
+                await new Promise(resolve => setTimeout(resolve, 3000));
+
+                const taskUrl = "https://api.wiro.ai/v1/Task/Detail";
+                const taskResponse = await fetch(PROXY + encodeURIComponent(taskUrl), {
+                    method: "POST",
+                    headers: {
+                        "x-api-key": API_KEY,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        tasktoken: taskToken
+                    })
+                });
+
+                const taskData = await taskResponse.json();
+                
+                if (taskData && taskData.tasklist && taskData.tasklist.length > 0) {
+                    const task = taskData.tasklist[0];
+
+                    if (task.status === "task_postprocess_end") {
+                        imageUrl = task.outputs[0].url;
+                    } else if (task.status === "task_cancel" || task.status === "task_failed") {
+                        throw new Error("فشلت عملية توليد الصورة.");
+                    }
+                }
+            }
+
+            outputImage.src = imageUrl;
+            downloadBtn.href = imageUrl;
+            resultContainer.style.display = "block";
+
+        } catch (error) {
+            alert("خطأ: " + error.message);
+        } finally {
+            generateBtn.disabled = false;
+            status.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
