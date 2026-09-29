@@ -59,7 +59,7 @@
             color: var(--text-muted);
         }
 
-        textarea, select {
+        textarea, select, input[type="url"] {
             width: 100%;
             padding: 12px;
             border-radius: 8px;
@@ -159,6 +159,11 @@
         <textarea id="prompt" placeholder="اكتب وصف الصورة بالتفصيل بالإنجليزية..."></textarea>
     </div>
 
+    <div class="form-group">
+        <label for="inputImage">رابط صورة مرجعية (اختياري - لتعديل صورة موجودة)</label>
+        <input type="url" id="inputImage" placeholder="https://example.com/image.png">
+    </div>
+
     <div class="options-grid form-group">
         <div>
             <label for="model">النموذج</label>
@@ -195,6 +200,7 @@
 
     async function generateImage() {
         const prompt = document.getElementById("prompt").value.trim();
+        const inputImage = document.getElementById("inputImage").value.trim();
         const model = document.getElementById("model").value;
         const aspectRatio = document.getElementById("aspectRatio").value;
         const generateBtn = document.getElementById("generateBtn");
@@ -215,22 +221,33 @@
         statusText.innerText = "جاري إرسال الطلب...";
 
         try {
+            // تجهيز البيانات
+            const payload = {
+                prompt: prompt,
+                resolution: "2k",
+                aspectRatio: aspectRatio,
+                watermark: "false",
+                maxImages: 1
+            };
+
+            // إضافة رابط الصورة المرجعية إن وجد
+            if (inputImage) {
+                payload.inputImage = inputImage;
+            }
+
             const runResponse = await fetch(`${WORKER_URL}/v1/Run/${model}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({
-                    prompt: prompt,
-                    resolution: "2k",
-                    aspectRatio: aspectRatio
-                })
+                body: JSON.stringify(payload)
             });
 
             const runData = await runResponse.json();
 
             if (!runResponse.ok || !runData.socketaccesstoken) {
-                throw new Error(runData.message || "حدث خطأ في الاستجابة من السيرفر.");
+                const errMsg = runData.message || runData.error || JSON.stringify(runData);
+                throw new Error(`خطأ من السيرفر: ${errMsg}`);
             }
 
             const taskToken = runData.socketaccesstoken;
@@ -268,7 +285,7 @@
             resultContainer.style.display = "block";
 
         } catch (error) {
-            alert("خطأ: " + error.message);
+            alert(error.message);
         } finally {
             generateBtn.disabled = false;
             status.style.display = "none";
